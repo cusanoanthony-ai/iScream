@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-teal: #16a9a5;
+  --color-brand-coral: #ff665f;
+  --color-brand-pink: #ed3c83;
+  --color-brand-navy: #123047;
+  --color-brand-cream: #fff9f2;
+  --color-brand-white: #ffffff;
+
+  --font-display: var(--font-fredoka), system-ui, sans-serif;
+  --font-body: var(--font-nunito), system-ui, sans-serif;
+
+  --shadow-soft: 0 4px 24px rgba(18, 48, 71, 0.08);
+  --shadow-card: 0 8px 32px rgba(18, 48, 71, 0.1);
+}
+
+:root {
+  --brand-teal: #16a9a5;
+  --brand-coral: #ff665f;
+  --brand-pink: #ed3c83;
+  --brand-navy: #123047;
+  --brand-cream: #fff9f2;
+  --brand-white: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-brand-cream font-body text-brand-navy antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-teal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .accent-handwritten {
+    font-family: var(--font-display);
+    @apply text-brand-pink italic;
+  }
+
+  .section-curve-top {
+    clip-path: ellipse(120% 100% at 50% 100%);
+  }
+
+  .section-curve-bottom {
+    clip-path: ellipse(120% 100% at 50% 0%);
+  }
+}

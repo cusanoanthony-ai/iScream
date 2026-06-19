@@ -54,7 +54,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       />
       <nav
         ref={panelRef}
-        className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-hidden bg-brand-cream shadow-card"
+        className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-hidden bg-white shadow-card"
       >
         <div className="flex h-[4.25rem] shrink-0 items-center justify-between border-b border-brand-navy/10 px-5 sm:h-[4.75rem]">
           <LogoLink size="header" />

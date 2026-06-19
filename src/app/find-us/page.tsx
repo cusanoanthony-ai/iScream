@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Instagram, Navigation } from "lucide-react";
 import { business } from "@/data/business";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
@@ -8,7 +8,6 @@ import { ScheduleCTA } from "@/components/ScheduleCTA";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { ExternalLinkCard } from "@/components/ExternalLinkCard";
-import { Instagram, Navigation } from "lucide-react";
 
 export const metadata = createPageMetadata({
   title: "Find the Truck",
@@ -22,7 +21,7 @@ export default function FindUsPage() {
     <>
       <section className="relative overflow-hidden bg-brand-teal py-12 text-white sm:py-16">
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <SectionHeading
               title="Find the Truck"
               description="I Scream Yogurt is mobile, so the best place to catch us changes throughout the week."
@@ -31,7 +30,7 @@ export default function FindUsPage() {
             />
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-lift">
               <SiteImage
-                imageKey="truckSideProfile"
+                imageKey="truckAngleCloseup"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -44,8 +43,40 @@ export default function FindUsPage() {
 
       <section className="py-14 sm:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
+              <SiteImage
+                imageKey="truckSideProfile"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                rounded="3xl"
+              />
+            </div>
+
             <div className="space-y-6">
+              <div className="rounded-2xl border-2 border-brand-teal/25 bg-brand-teal/5 p-6 shadow-soft sm:p-8">
+                <h2 className="text-xl font-extrabold text-brand-navy">Live Schedule</h2>
+                <p className="mt-3 font-semibold text-brand-navy/80">
+                  Our schedule changes throughout the week.
+                </p>
+                <p className="mt-2 text-sm text-brand-navy/70">
+                  Today&apos;s location may change due to events, weather, or private bookings.
+                  Confirm the latest stop before you head out.
+                </p>
+                <div className="mt-6 flex flex-col gap-3">
+                  <ScheduleCTA />
+                  <InstagramCTA variant="compact" />
+                </div>
+                <a
+                  href={business.phone.href}
+                  className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-teal"
+                >
+                  <Phone className="h-4 w-4 text-brand-teal" aria-hidden="true" />
+                  Call {business.phone.display}
+                </a>
+              </div>
+
               <div className="grid gap-4 sm:grid-cols-2">
                 <ExternalLinkCard
                   href={business.social.streetFoodFinder.url}
@@ -63,50 +94,10 @@ export default function FindUsPage() {
                 />
               </div>
 
-              <div className="rounded-2xl bg-white p-6 shadow-card">
-                <h2 className="text-lg font-bold text-brand-navy">Before You Head Out</h2>
-                <p className="mt-3 text-brand-navy/75">
-                  Today&apos;s location may change due to events, weather, or private bookings.
-                  Confirm the latest stop through StreetFoodFinder or Instagram before traveling.
-                </p>
-                <div className="mt-6 space-y-3">
-                  <ScheduleCTA />
-                  <InstagramCTA variant="compact" />
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <a
-                  href={business.phone.href}
-                  className="flex min-h-12 items-center gap-2 text-lg font-bold text-brand-navy hover:text-brand-teal"
-                >
-                  <Phone className="h-5 w-5 text-brand-teal" aria-hidden="true" />
-                  {business.phone.display}
-                </a>
-                <p className="flex items-start gap-2 text-brand-navy/75">
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-teal" aria-hidden="true" />
-                  Serving {business.serviceArea}
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
-                <SiteImage
-                  imageKey="truckAngleCloseup"
-                  alt=""
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  rounded="3xl"
-                />
-              </div>
-              <div className="rounded-2xl border-2 border-brand-teal/25 bg-brand-teal/5 p-6">
-                <h2 className="font-bold text-brand-navy">Upcoming Locations</h2>
-                <p className="mt-2 text-sm text-brand-navy/70">
-                  Check StreetFoodFinder or Instagram for the latest schedule. We do not publish
-                  unverified location details on this site.
-                </p>
-              </div>
+              <p className="flex items-start gap-2 text-brand-navy/75">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-teal" aria-hidden="true" />
+                Serving {business.serviceArea}
+              </p>
             </div>
           </div>
         </Container>
@@ -120,7 +111,7 @@ export default function FindUsPage() {
             align="center"
           />
           <PrimaryButton href="/catering" className="mt-8" trackAs="book_truck_click">
-            Request Catering
+            Book Your Event
           </PrimaryButton>
         </Container>
       </section>

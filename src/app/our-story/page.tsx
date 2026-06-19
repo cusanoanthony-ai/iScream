@@ -71,10 +71,15 @@ export default function OurStoryPage() {
                 eventually create a permanent destination where customers can enjoy more flavors,
                 more choices, and the same energy they know from the truck.
               </p>
-              <blockquote className="rounded-2xl border-l-4 border-brand-pink bg-brand-pink/5 px-6 py-5 text-xl font-bold italic text-brand-navy">
-                &ldquo;We&apos;re not only serving dessert. We&apos;re building the community that
-                can help turn a mobile favorite into a permanent Sacramento destination.&rdquo;
-              </blockquote>
+              <div
+                className="rounded-2xl border-l-4 border-brand-pink bg-brand-pink/5 px-6 py-5"
+                role="presentation"
+              >
+                <p className="text-xl font-extrabold leading-snug text-brand-navy">
+                  We&apos;re not only serving dessert — we&apos;re building the community that
+                  can help turn a mobile favorite into a permanent Sacramento destination.
+                </p>
+              </div>
             </div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card">
               <SiteImage
@@ -90,11 +95,14 @@ export default function OurStoryPage() {
       </section>
 
       <section className="bg-brand-cream py-14 sm:py-16">
-        <Container className="space-y-10">
+        <Container className="grid gap-10 lg:grid-cols-3">
           {storySections.map((section) => (
-            <article key={section.title} className="max-w-3xl">
-              <h2 className="text-2xl font-extrabold text-brand-navy">{section.title}</h2>
-              <p className="mt-3 text-lg leading-relaxed text-brand-navy/75">{section.content}</p>
+            <article
+              key={section.title}
+              className="rounded-2xl bg-white p-6 shadow-soft sm:p-7"
+            >
+              <h2 className="text-xl font-extrabold text-brand-navy">{section.title}</h2>
+              <p className="mt-3 leading-relaxed text-brand-navy/75">{section.content}</p>
             </article>
           ))}
         </Container>

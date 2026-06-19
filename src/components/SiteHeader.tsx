@@ -21,7 +21,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -37,18 +37,18 @@ export function SiteHeader() {
       </a>
       <header
         className={cn(
-          "sticky top-0 z-40 bg-brand-cream/95 backdrop-blur-md transition-shadow duration-200",
+          "sticky top-0 z-40 bg-white/95 backdrop-blur-md transition-[box-shadow,border-color] duration-200",
           scrolled ? "border-b border-brand-navy/8 shadow-soft" : "border-b border-transparent",
         )}
       >
         <Container
           as="div"
-          className="grid h-[4.25rem] grid-cols-[1fr_auto] items-center gap-3 sm:h-[5rem] lg:grid-cols-[minmax(150px,190px)_1fr_auto] lg:gap-6"
+          className="flex h-[4.25rem] items-center justify-between gap-3 sm:h-[5rem] lg:grid lg:grid-cols-[minmax(150px,190px)_1fr_auto] lg:gap-8"
         >
-          <LogoLink size="header" className="lg:justify-self-start" />
+          <LogoLink size="header" className="shrink-0 lg:justify-self-start" />
 
           <nav
-            className="hidden items-center justify-center gap-1 lg:flex"
+            className="hidden items-center justify-center gap-0.5 lg:flex"
             aria-label="Primary"
           >
             {primaryNav.map((item) => {
@@ -60,49 +60,51 @@ export function SiteHeader() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative rounded-md px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal",
-                    emphasized ? "font-extrabold" : "font-semibold",
+                    "whitespace-nowrap rounded-md px-2.5 py-2 text-[0.8125rem] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal xl:px-3 xl:text-sm",
+                    emphasized ? "font-extrabold" : "font-medium",
                     active
-                      ? "text-brand-teal after:absolute after:inset-x-2 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-brand-teal"
+                      ? "text-brand-teal"
                       : emphasized
                         ? "text-brand-navy hover:text-brand-teal"
-                        : "text-brand-navy/70 hover:text-brand-navy",
+                        : "text-brand-navy/65 hover:text-brand-navy",
                   )}
                 >
                   {item.label}
+                  {active && (
+                    <span className="mx-auto mt-1 block h-0.5 w-4 rounded-full bg-brand-teal" aria-hidden="true" />
+                  )}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="flex items-center justify-end gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-4 lg:justify-self-end">
             <Link
               href={business.phone.href}
-              className="hidden items-center gap-1.5 text-sm font-semibold text-brand-navy/75 transition-colors hover:text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal md:inline-flex"
+              className="hidden items-center gap-1.5 text-sm font-medium text-brand-navy/70 transition-colors hover:text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal lg:inline-flex"
               onClick={() => trackEvent("call_click")}
             >
               <Phone className="h-4 w-4 shrink-0 text-brand-teal" aria-hidden="true" />
               <span className="hidden xl:inline">{business.phone.display}</span>
-              <span className="xl:hidden">Call</span>
             </Link>
             <PrimaryButton
               href="/catering"
               trackAs="book_truck_click"
-              className="hidden !min-h-10 !px-4 !py-2 !text-sm sm:inline-flex lg:!px-5"
+              className="!min-h-10 !px-4 !py-2 !text-sm max-lg:!hidden"
             >
               Book the Truck
             </PrimaryButton>
             <PrimaryButton
               href="/catering"
               trackAs="book_truck_click"
-              className="!min-h-9 !px-3 !py-1.5 !text-xs sm:hidden"
+              className="!min-h-9 !px-3 !py-1.5 !text-xs lg:!hidden"
               aria-label="Book the Truck"
             >
               Book
             </PrimaryButton>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-brand-navy transition-colors hover:bg-white/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-brand-navy transition-colors hover:bg-brand-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal lg:hidden"
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               aria-label="Open navigation menu"

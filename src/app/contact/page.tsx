@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { ExternalLinkCard } from "@/components/ExternalLinkCard";
 import { SiteImage } from "@/components/SiteImage";
+import { PrimaryButton } from "@/components/PrimaryButton";
 
 export const metadata = createPageMetadata({
   title: "Contact",
@@ -19,7 +20,22 @@ export default function ContactPage() {
     <>
       <section className="hero-gradient py-12 sm:py-16">
         <Container>
-          <SectionHeading title="Let's Make Something Sweet Happen" titleAs="h1" />
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+            <SectionHeading
+              title="Let's Make Something Sweet Happen"
+              description="Questions, ideas, or just want to say hi? Reach out — and for events, head to our catering page."
+              titleAs="h1"
+            />
+            <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-3xl shadow-card lg:max-w-none">
+              <SiteImage
+                imageKey="berryCookieFroyoTruck"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                rounded="3xl"
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -27,27 +43,18 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="space-y-6 lg:col-span-2">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card lg:aspect-[3/4]">
-                <SiteImage
-                  imageKey="berryCookieFroyoTruck"
-                  alt=""
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 35vw"
-                  rounded="3xl"
-                />
-              </div>
               <h2 className="text-xl font-bold text-brand-navy">Get in Touch</h2>
               <div className="space-y-3">
                 <a
                   href={business.phone.href}
-                  className="flex min-h-12 items-center gap-3 rounded-xl bg-brand-pink/10 px-4 font-bold text-brand-navy hover:bg-brand-pink/15"
+                  className="flex min-h-12 items-center gap-3 rounded-xl bg-brand-pink/10 px-4 font-bold text-brand-navy transition-colors hover:bg-brand-pink/15"
                 >
                   <Phone className="h-5 w-5 text-brand-pink" aria-hidden="true" />
                   {business.phone.display}
                 </a>
                 <a
                   href={business.email.href}
-                  className="flex min-h-12 items-center gap-3 rounded-xl bg-white px-4 text-brand-navy shadow-soft hover:text-brand-teal"
+                  className="flex min-h-12 items-center gap-3 rounded-xl bg-white px-4 text-brand-navy shadow-soft transition-colors hover:text-brand-teal"
                 >
                   <Mail className="h-5 w-5 text-brand-teal" aria-hidden="true" />
                   {business.email.display}
@@ -80,10 +87,13 @@ export default function ContactPage() {
                   trackAs="streetfoodfinder_click"
                 />
               </div>
+              <PrimaryButton href="/catering" trackAs="book_truck_click" className="w-full sm:w-auto">
+                Book Your Event
+              </PrimaryButton>
             </div>
 
             <div className="lg:col-span-3">
-              <div className="rounded-2xl bg-white p-6 shadow-card sm:p-8">
+              <div className="rounded-2xl border border-brand-navy/5 bg-white p-6 shadow-card sm:p-8">
                 <h2 className="text-xl font-bold text-brand-navy">Send a Message</h2>
                 <p className="mt-2 text-sm text-brand-navy/70">
                   For event bookings, please use our{" "}

@@ -6,10 +6,11 @@ describe("menu data", () => {
     expect(menuCategories).toHaveLength(4);
   });
 
-  it("includes Floats & Refreshers category", () => {
+  it("includes Cool & Refreshing category with image", () => {
     const floats = menuCategories.find((c) => c.id === "floats-refreshers");
     expect(floats).toBeDefined();
-    expect(floats?.imageKeys.length).toBeGreaterThanOrEqual(2);
+    expect(floats?.name).toBe("Cool & Refreshing");
+    expect(floats?.imageKey).toBeTruthy();
   });
 
   it("has product preview cards for homepage", () => {

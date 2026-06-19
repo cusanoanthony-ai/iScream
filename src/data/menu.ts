@@ -5,7 +5,7 @@ export type MenuCategory = {
   name: string;
   description: string;
   items: MenuItem[];
-  imageKeys: ImageKey[];
+  imageKey: ImageKey;
 };
 
 export type MenuItem = {
@@ -21,7 +21,7 @@ export const menuCategories: MenuCategory[] = [
     name: "Frozen Yogurt",
     description:
       "Choose your frozen yogurt and finish it with your favorite toppings. Flavor and topping availability may change.",
-    imageKeys: ["fruityPebblesFroyoCloseup", "saltedCaramelOreoFroyo"],
+    imageKey: "fruityPebblesFroyoCloseup",
     items: [
       { name: "Build Your Own FroYo" },
       { name: "Classic FroYo Cup" },
@@ -34,7 +34,7 @@ export const menuCategories: MenuCategory[] = [
     name: "Specialty Creations",
     description:
       "Big flavors, creative combinations, and limited-time favorites inspired by the season.",
-    imageKeys: ["hotFudgeSundae", "peachCobblerSundae"],
+    imageKey: "hotFudgeSundae",
     items: [
       { name: "Specialty Sundaes" },
       { name: "Brownie à la Mode" },
@@ -45,10 +45,10 @@ export const menuCategories: MenuCategory[] = [
   },
   {
     id: "floats-refreshers",
-    name: "Floats & Refreshers",
+    name: "Cool & Refreshing",
     description:
       "Light, refreshing treats perfect for warm Sacramento days and outdoor events.",
-    imageKeys: ["orangeFloat", "rootBeerFloat", "mangoChamoyCups"],
+    imageKey: "mangoChamoyCups",
     items: [
       { name: "Dole Whip" },
       { name: "Smoothies" },
@@ -62,7 +62,7 @@ export const menuCategories: MenuCategory[] = [
     name: "Shakes & More",
     description:
       "Creamy shakes, fruit parfaits, and specialty creations worth chasing down the truck for.",
-    imageKeys: ["twoSpecialtyShakes", "fruityCerealShakeTruck"],
+    imageKey: "twoSpecialtyShakes",
     items: [
       { name: "Milkshakes" },
       { name: "Fruit Parfaits" },
@@ -89,7 +89,7 @@ export const productPreview = [
     href: "/menu#specialty-creations",
   },
   {
-    title: "Floats & Refreshing Treats",
+    title: "Dole Whip & Refreshing Treats",
     accent: "Cool & classic",
     description:
       "Orange floats, root beer floats, and refreshing treats for warm Sacramento days.",

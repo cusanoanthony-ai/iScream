@@ -22,6 +22,7 @@ import { ScheduleCTA } from "@/components/ScheduleCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { SprinklePattern } from "@/components/SprinklePattern";
 import { CateringCollage } from "@/components/CateringCollage";
+import { StorefrontOutline } from "@/components/StorefrontOutline";
 
 export const metadata = createPageMetadata({
   title: "I Scream Yogurt | Sacramento Frozen Yogurt Truck & Catering",
@@ -181,13 +182,13 @@ export default function HomePage() {
           <SectionHeading title="Bringing the Truck Is Easy" align="center" className="mb-8" />
           <div className="relative mx-auto max-w-4xl">
             <div
-              className="absolute left-[16%] right-[16%] top-5 hidden h-px bg-brand-teal/25 md:block"
+              className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-brand-teal/25 md:block"
               aria-hidden="true"
             />
-            <ol className="grid gap-6 md:grid-cols-3 md:gap-4">
+            <ol className="grid gap-8 md:grid-cols-3 md:gap-4">
               {howItWorksSteps.map((step) => (
                 <li key={step.step} className="relative text-center md:px-2">
-                  <span className="mx-auto mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-coral text-lg font-extrabold text-white shadow-soft">
+                  <span className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-coral text-2xl font-extrabold text-white shadow-soft">
                     {step.step}
                   </span>
                   <h3 className="text-base font-bold text-brand-navy">{step.title}</h3>
@@ -215,11 +216,11 @@ export default function HomePage() {
             <div className="lg:order-1">
               <SectionHeading
                 title="Catch Us Around Sacramento"
-                description="Our schedule changes as we visit events and locations throughout the area."
+                description="Our schedule changes throughout the week — confirm before you head out."
               />
               <div className="mt-6 rounded-2xl border border-brand-teal/20 bg-brand-cream p-5 shadow-soft sm:p-6">
                 <p className="text-sm font-semibold text-brand-navy/80">
-                  Schedule changes throughout the week — confirm before you head out.
+                  Our schedule changes throughout the week.
                 </p>
                 <div className="mt-4 flex flex-col gap-3">
                   <ScheduleCTA />
@@ -242,13 +243,13 @@ export default function HomePage() {
       <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading title="The I Scream Experience" align="center" className="mb-8" />
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:grid-rows-[repeat(3,minmax(0,1fr))] md:gap-4">
             {homepageGallery.map((image, index) => (
               <div
                 key={image.src}
                 className={`group relative overflow-hidden rounded-2xl shadow-soft ${
                   index === 0
-                    ? "col-span-2 aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[300px]"
+                    ? "col-span-2 aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[280px]"
                     : "aspect-square"
                 }`}
               >
@@ -276,28 +277,13 @@ export default function HomePage() {
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
               <SiteImage
-                imageKey="purpleFroyoTruck"
+                imageKey="truckSideProfile"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 rounded="3xl"
               />
-              {/* Storefront outline — aspirational, not a real location */}
-              <svg
-                className="pointer-events-none absolute inset-x-4 bottom-4 h-24 w-[calc(100%-2rem)] text-white/25"
-                viewBox="0 0 320 80"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 72V28L40 12H280L312 28V72H8Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeDasharray="6 4"
-                />
-                <rect x="120" y="44" width="80" height="28" stroke="currentColor" strokeWidth="2" />
-                <path d="M40 12L160 4L280 12" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
+              <StorefrontOutline className="pointer-events-none absolute inset-x-4 bottom-4 h-24 w-[calc(100%-2rem)] text-white/30" />
             </div>
             <div>
               <h2 className="text-3xl font-extrabold sm:text-4xl">The Truck Is Just the Beginning</h2>

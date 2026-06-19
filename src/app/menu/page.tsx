@@ -59,25 +59,14 @@ export default function MenuPage() {
                   ))}
                 </ul>
               </div>
-              <div className={`grid gap-3 ${category.imageKeys.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}>
-                {category.imageKeys.map((key, i) => (
-                  <div
-                    key={key}
-                    className={`relative overflow-hidden rounded-2xl shadow-card ${
-                      category.imageKeys.length === 3 && i === 0
-                        ? "col-span-2 aspect-[16/10]"
-                        : "aspect-[4/5]"
-                    }`}
-                  >
-                    <SiteImage
-                      imageKey={key}
-                      alt=""
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                      rounded="2xl"
-                    />
-                  </div>
-                ))}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-card sm:aspect-[5/4]">
+                <SiteImage
+                  imageKey={category.imageKey}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  rounded="2xl"
+                />
               </div>
             </article>
           ))}
@@ -111,7 +100,7 @@ export default function MenuPage() {
               Bring the full I Scream Yogurt experience to your next celebration.
             </p>
             <PrimaryButton href="/catering" className="mt-6" trackAs="book_truck_click">
-              Book Catering
+              Book Your Event
             </PrimaryButton>
           </div>
         </Container>

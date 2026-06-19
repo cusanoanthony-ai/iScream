@@ -101,26 +101,11 @@ export const imageManifest = {
 
 export type ImageKey = keyof typeof imageManifest;
 
-/** Curated six-image gallery for homepage — visual variety, no repetition */
+/** Curated seven-image gallery for homepage — visual variety, no repetition */
 export const homepageGallery: SiteImageEntry[] = [
   {
     src: "/images/gallery/truck-side-profile.webp",
     alt: "I Scream Yogurt truck side profile",
-    objectPosition: "center",
-  },
-  {
-    src: "/images/gallery/berry-cookie-froyo-truck.webp",
-    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
-    objectPosition: "center",
-  },
-  {
-    src: "/images/gallery/hot-fudge-sundae.webp",
-    alt: "Hot fudge sundae from I Scream Yogurt",
-    objectPosition: "center top",
-  },
-  {
-    src: "/images/gallery/orange-float.webp",
-    alt: "Orange cream float from I Scream Yogurt",
     objectPosition: "center",
   },
   {
@@ -129,8 +114,28 @@ export const homepageGallery: SiteImageEntry[] = [
     objectPosition: "center",
   },
   {
-    src: "/images/gallery/fruity-cereal-shake-truck.webp",
-    alt: "Fruity cereal milkshake at the I Scream Yogurt truck",
+    src: "/images/gallery/hot-fudge-sundae.webp",
+    alt: "Hot fudge sundae from I Scream Yogurt",
+    objectPosition: "center top",
+  },
+  {
+    src: "/images/gallery/mango-chamoy-cups.webp",
+    alt: "Mango chamoy cups from I Scream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/products/peach-cobbler-tall.webp",
+    alt: "Tall peach cobbler dessert cup from I Scream Yogurt",
+    objectPosition: "center top",
+  },
+  {
+    src: "/images/gallery/orange-float.webp",
+    alt: "Orange cream float from I Scream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/berry-cookie-froyo-truck.webp",
+    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
     objectPosition: "center",
   },
 ];

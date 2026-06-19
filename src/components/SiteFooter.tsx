@@ -45,7 +45,7 @@ export function SiteFooter() {
     <footer className="relative overflow-hidden bg-brand-coral pt-16 pb-8 text-white">
       <SprinklePattern variant="dark" className="opacity-15" />
       <Container className="relative">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+            <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-10">
           <div className="lg:col-span-4">
             <LogoLink variant="light" size="footer" />
             <p className="mt-4 max-w-sm text-base leading-relaxed text-white/90">
@@ -108,20 +108,20 @@ export function SiteFooter() {
           </div>
 
           <div className="lg:col-span-4" id="newsletter">
-            <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-white/80">
+            <h2 className="mb-3 text-sm font-bold uppercase tracking-widest text-white/80">
               Stay in the Loop
             </h2>
-            <p className="mb-4 text-sm text-white/90">
+            <p className="mb-5 max-w-sm text-sm leading-relaxed text-white/90">
               Get updates on where to find the truck, new treats, and the journey toward a future storefront.
             </p>
             <NewsletterForm variant="light" />
-            <div className="mt-6">
+            <div className="mt-5">
               <PrimaryButton
                 href="/catering"
                 trackAs="book_truck_click"
                 className="!bg-brand-navy hover:!bg-brand-navy/90"
               >
-                Catering
+                Book Catering
               </PrimaryButton>
             </div>
           </div>

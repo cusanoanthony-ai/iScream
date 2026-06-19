@@ -64,7 +64,8 @@ export function BrandImage({
   }, [entry.src]);
 
   const roundedClass = roundedClasses[rounded];
-  const shouldPriority = priority ?? entry.priority ?? false;
+  const shouldPriority =
+    priority ?? ("priority" in entry ? entry.priority : false) ?? false;
   const PlaceholderIcon =
     placeholderIcons[entry.placeholderIcon ?? "gallery"] ?? ImageIcon;
 

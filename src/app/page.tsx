@@ -24,6 +24,7 @@ import { InstagramCTA } from "@/components/InstagramCTA";
 import { ScheduleCTA } from "@/components/ScheduleCTA";
 import { SprinklePattern } from "@/components/SprinklePattern";
 import { CateringGraphicPanel } from "@/components/brand/CateringGraphicPanel";
+import { HomepageHeroVisual } from "@/components/brand/HomepageHeroVisual";
 import { FutureStorefrontGraphic } from "@/components/brand/FutureStorefrontGraphic";
 
 export const metadata = createPageMetadata({
@@ -46,11 +47,11 @@ const cateringIcons = {
 export default function HomePage() {
   return (
     <>
-      {/* Hero — sole homepage truck photo */}
+      {/* Hero — product-led visual composition */}
       <section className="hero-gradient relative overflow-hidden pb-10 pt-6 sm:pb-14 sm:pt-8 lg:pb-16">
         <SprinklePattern className="opacity-25" aria-hidden="true" />
         <Container className="relative">
-          <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="order-2 lg:order-1">
               <p className="mb-2 inline-flex items-center gap-2 rounded-full bg-brand-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-teal">
                 Mobile dessert truck • Catering available
@@ -85,18 +86,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="relative order-1 mx-auto w-full max-w-lg lg:order-2 lg:max-w-none">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-white shadow-lift sm:aspect-[5/3]">
-                <SiteImage
-                  imageKey="truckSideProfile"
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  rounded="3xl"
-                  objectPosition="center 72%"
-                />
-              </div>
+            <div className="order-1 lg:order-2">
+              <HomepageHeroVisual />
             </div>
           </div>
         </Container>
@@ -122,7 +113,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Catering — branded graphic panel, no truck repeat */}
+      {/* Catering — truck-led visual, distinct from product hero */}
       <section className="relative overflow-hidden bg-brand-teal py-12 text-white sm:py-16 lg:py-20">
         <SprinklePattern variant="dark" className="opacity-15" aria-hidden="true" />
         <Container className="relative">

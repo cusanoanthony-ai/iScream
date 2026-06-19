@@ -34,6 +34,8 @@ const productionPaths = [
   "/images/gallery/truck-serving-customers.webp",
   "/images/gallery/truck-side-profile.webp",
   "/images/gallery/hot-fudge-sundae.webp",
+  "/images/gallery/orange-float.webp",
+  "/images/gallery/fruity-cereal-shake-truck.webp",
 ];
 
 const missing = [];

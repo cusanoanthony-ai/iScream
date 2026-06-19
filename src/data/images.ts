@@ -101,7 +101,41 @@ export const imageManifest = {
 
 export type ImageKey = keyof typeof imageManifest;
 
-/** Gallery entries for homepage and marketing */
+/** Curated six-image gallery for homepage — visual variety, no repetition */
+export const homepageGallery: SiteImageEntry[] = [
+  {
+    src: "/images/gallery/truck-side-profile.webp",
+    alt: "I Scream Yogurt truck side profile",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/berry-cookie-froyo-truck.webp",
+    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/hot-fudge-sundae.webp",
+    alt: "Hot fudge sundae from I Scream Yogurt",
+    objectPosition: "center top",
+  },
+  {
+    src: "/images/gallery/orange-float.webp",
+    alt: "Orange cream float from I Scream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/truck-serving-customers.webp",
+    alt: "I Scream Yogurt truck serving guests at an event",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/fruity-cereal-shake-truck.webp",
+    alt: "Fruity cereal milkshake at the I Scream Yogurt truck",
+    objectPosition: "center",
+  },
+];
+
+/** Full gallery set for reference / verification */
 export const galleryManifest: SiteImageEntry[] = [
   {
     src: "/images/gallery/berry-cookie-froyo-truck.webp",
@@ -148,6 +182,6 @@ export const galleryManifest: SiteImageEntry[] = [
 /** All production image paths for verification script */
 export function getAllProductionImagePaths(): string[] {
   const manifestPaths = Object.values(imageManifest).map((e) => e.src);
-  const galleryPaths = galleryManifest.map((e) => e.src);
+  const galleryPaths = [...galleryManifest.map((e) => e.src), ...homepageGallery.map((e) => e.src)];
   return [...new Set([...manifestPaths, ...galleryPaths])];
 }

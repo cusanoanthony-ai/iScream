@@ -47,7 +47,7 @@ export function SiteFooter() {
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <LogoLink variant="light" />
+            <LogoLink variant="light" size="footer" />
             <p className="mt-4 max-w-sm text-base leading-relaxed text-white/90">
               {business.footerDescription}
             </p>
@@ -121,7 +121,7 @@ export function SiteFooter() {
                 trackAs="book_truck_click"
                 className="!bg-brand-navy hover:!bg-brand-navy/90"
               >
-                Book Catering
+                Catering
               </PrimaryButton>
             </div>
           </div>

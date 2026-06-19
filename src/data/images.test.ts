@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { imageManifest, galleryManifest, getAllProductionImagePaths } from "@/data/images";
+import { imageManifest, galleryManifest, homepageGallery, getAllProductionImagePaths } from "@/data/images";
 import fs from "fs";
 import path from "path";
 
@@ -29,8 +29,12 @@ describe("image manifest", () => {
     }
   });
 
-  it("has eight gallery images", () => {
-    expect(galleryManifest).toHaveLength(8);
+  it("has six homepage gallery images", () => {
+    expect(homepageGallery).toHaveLength(6);
+  });
+
+  it("has full gallery manifest", () => {
+    expect(galleryManifest.length).toBeGreaterThanOrEqual(6);
   });
 
   it("all production paths exist on disk", () => {

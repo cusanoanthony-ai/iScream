@@ -40,8 +40,10 @@ export function ProductCard({
       </div>
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-bold uppercase tracking-widest text-brand-teal">{accent}</p>
-        <h3 className="mt-1 text-xl font-bold text-brand-navy">{title}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-navy/70">{description}</p>
+        <h3 className="mt-1 min-h-[3.5rem] text-lg font-bold leading-snug text-brand-navy sm:text-xl">
+          {title}
+        </h3>
+        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-brand-navy/70">{description}</p>
         <span className="mt-4 text-sm font-bold text-brand-coral group-hover:text-brand-pink">
           View on menu →
         </span>

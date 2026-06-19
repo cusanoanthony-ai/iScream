@@ -1,9 +1,9 @@
 export const homepageCateringEvents = [
-  "Birthday Parties",
-  "School Events",
-  "Company Events",
-  "Community Gatherings",
-  "Family Celebrations",
+  { label: "Birthday Parties", icon: "party" as const },
+  { label: "School Events", icon: "school" as const },
+  { label: "Company Events", icon: "building" as const },
+  { label: "Community Gatherings", icon: "users" as const },
+  { label: "Family Celebrations", icon: "heart" as const },
 ];
 
 export const eventTypes = [

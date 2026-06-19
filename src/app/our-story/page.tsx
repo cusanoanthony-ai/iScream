@@ -5,11 +5,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SiteImage } from "@/components/SiteImage";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { SprinklePattern } from "@/components/SprinklePattern";
 
 export const metadata = createPageMetadata({
   title: "Our Story",
   description:
-    "Learn about I Scream Yogurt's mobile frozen yogurt truck and the vision to grow into a permanent Sacramento destination.",
+    "Learn about iScream Yogurt's mobile frozen yogurt truck and the vision to grow into a permanent Sacramento destination.",
   path: "/our-story",
 });
 
@@ -17,7 +18,7 @@ const storySections = [
   {
     title: "Where We Are Today",
     content:
-      "Today, I Scream Yogurt is a mobile dessert experience serving Sacramento and surrounding communities. The truck brings customizable frozen yogurt, specialty treats, and memorable energy directly to the people—at parties, schools, workplaces, and community events.",
+      "Today, iScream Yogurt is a mobile dessert experience serving Sacramento and surrounding communities. The truck brings customizable frozen yogurt, specialty treats, and memorable energy directly to the people—at parties, schools, workplaces, and community events.",
   },
   {
     title: "Why the Truck Matters",
@@ -27,7 +28,7 @@ const storySections = [
   {
     title: "Where We're Going",
     content:
-      "The long-term vision is to grow the I Scream Yogurt community and eventually create a permanent destination where customers can enjoy more flavors, more choices, and the same energy they know from the truck.",
+      "The long-term vision is to grow the iScream Yogurt community and eventually create a permanent destination where customers can enjoy more flavors, more choices, and the same energy they know from the truck.",
   },
 ];
 
@@ -57,45 +58,35 @@ export default function OurStoryPage() {
 
       <section className="py-14 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-            <div className="space-y-6 text-lg leading-relaxed text-brand-navy/80">
-              <p>
-                I Scream Yogurt was created to bring the fun of frozen yogurt directly to the
-                people. Instead of waiting for customers to visit a shop, the truck brings
-                customizable treats, specialty desserts, and an unforgettable experience to events
-                and communities throughout the Sacramento area.
+          <div className="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-brand-navy/80">
+            <p>
+              iScream Yogurt was created to bring the fun of frozen yogurt directly to the
+              people. Instead of waiting for customers to visit a shop, the truck brings
+              customizable treats, specialty desserts, and an unforgettable experience to events
+              and communities throughout the Sacramento area.
+            </p>
+            <p>
+              The truck is the heart of the business today, but it is also the beginning of
+              something larger. The long-term vision is to grow the iScream Yogurt community and
+              eventually create a permanent destination where customers can enjoy more flavors,
+              more choices, and the same energy they know from the truck.
+            </p>
+            <div
+              className="rounded-2xl border-l-4 border-brand-pink bg-brand-pink/5 px-6 py-5"
+              role="presentation"
+            >
+              <p className="text-xl font-extrabold leading-snug text-brand-navy">
+                We&apos;re not only serving dessert — we&apos;re building the community that
+                can help turn a mobile favorite into a permanent Sacramento destination.
               </p>
-              <p>
-                The truck is the heart of the business today, but it is also the beginning of
-                something larger. The long-term vision is to grow the I Scream Yogurt community and
-                eventually create a permanent destination where customers can enjoy more flavors,
-                more choices, and the same energy they know from the truck.
-              </p>
-              <div
-                className="rounded-2xl border-l-4 border-brand-pink bg-brand-pink/5 px-6 py-5"
-                role="presentation"
-              >
-                <p className="text-xl font-extrabold leading-snug text-brand-navy">
-                  We&apos;re not only serving dessert — we&apos;re building the community that
-                  can help turn a mobile favorite into a permanent Sacramento destination.
-                </p>
-              </div>
-            </div>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card">
-              <SiteImage
-                imageKey="truckServingCustomers"
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                rounded="3xl"
-              />
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-brand-cream py-14 sm:py-16">
-        <Container className="grid gap-10 lg:grid-cols-3">
+      <section className="relative overflow-hidden bg-brand-cream py-14 sm:py-16">
+        <SprinklePattern className="opacity-20" aria-hidden="true" />
+        <Container className="relative grid gap-10 lg:grid-cols-3">
           {storySections.map((section) => (
             <article
               key={section.title}
@@ -124,7 +115,7 @@ export default function OurStoryPage() {
             <div className="rounded-2xl bg-white p-6 shadow-card sm:p-8">
               <h3 className="text-xl font-bold text-brand-navy">Stay Connected</h3>
               <p className="mt-2 text-sm text-brand-navy/70">
-                Be part of the community helping I Scream Yogurt grow.
+                Be part of the community helping iScream Yogurt grow.
               </p>
               <div className="mt-4">
                 <NewsletterForm />

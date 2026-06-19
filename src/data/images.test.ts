@@ -29,8 +29,8 @@ describe("image manifest", () => {
     }
   });
 
-  it("has seven homepage gallery images", () => {
-    expect(homepageGallery).toHaveLength(7);
+  it("has four homepage gallery images", () => {
+    expect(homepageGallery).toHaveLength(4);
   });
 
   it("has full gallery manifest", () => {

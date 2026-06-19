@@ -93,7 +93,7 @@ export const productPreview = [
     accent: "Cool & classic",
     description:
       "Orange floats, root beer floats, and refreshing treats for warm Sacramento days.",
-    imageKey: "orangeFloat" as ImageKey,
+    imageKey: "mangoChamoyCups" as ImageKey,
     href: "/menu#floats-refreshers",
   },
   {

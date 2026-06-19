@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const data = parsed.data;
-    const subject = `I Scream Yogurt Catering Request – ${data.eventDate} – ${data.fullName}`;
+    const subject = `iScream Yogurt Catering Request – ${data.eventDate} – ${data.fullName}`;
     const html = `
       <h2>New catering request</h2>
       ${formatFieldsHtml({

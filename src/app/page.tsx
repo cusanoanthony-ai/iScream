@@ -6,6 +6,9 @@ import {
   Building2,
   Users,
   Heart,
+  ClipboardList,
+  CalendarCheck,
+  Truck,
 } from "lucide-react";
 import { business } from "@/data/business";
 import { productPreview } from "@/data/menu";
@@ -25,11 +28,13 @@ import { CateringCollage } from "@/components/CateringCollage";
 import { StorefrontOutline } from "@/components/StorefrontOutline";
 
 export const metadata = createPageMetadata({
-  title: "I Scream Yogurt | Sacramento Frozen Yogurt Truck & Catering",
+  title: "iScream Yogurt | Sacramento Frozen Yogurt Truck & Catering",
   description:
-    "Find I Scream Yogurt around Sacramento or book the mobile frozen yogurt truck for parties, school events, company gatherings, and community celebrations.",
+    "Find iScream Yogurt around Sacramento or book the mobile frozen yogurt truck for parties, school events, company gatherings, and community celebrations.",
   path: "/",
 });
+
+const howItWorksIcons = [ClipboardList, CalendarCheck, Truck];
 
 const cateringIcons = {
   party: PartyPopper,
@@ -98,13 +103,13 @@ export default function HomePage() {
                   rounded="3xl"
                 />
               </div>
-              <div className="absolute -bottom-3 -left-1 z-10 w-[34%] max-w-[160px] overflow-hidden rounded-2xl border-4 border-white shadow-card sm:-left-4 sm:max-w-[175px]">
+              <div className="absolute -bottom-2 -left-1 z-10 w-[28%] max-w-[140px] overflow-hidden rounded-2xl border-4 border-white shadow-card sm:-left-3 sm:max-w-[150px]">
                 <div className="relative aspect-square">
                   <SiteImage
                     imageKey="fruityCerealShakeTruck"
                     alt=""
                     fill
-                    sizes="175px"
+                    sizes="150px"
                     rounded="xl"
                     objectPosition="center bottom"
                   />
@@ -146,7 +151,7 @@ export default function HomePage() {
                 We Cater Sweet Memories
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-white/90">
-                From birthday parties to company events, I Scream Yogurt brings the truck, the
+                From birthday parties to company events, {business.name} brings the truck, the
                 treats, and the fun directly to your celebration.
               </p>
               <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
@@ -185,16 +190,23 @@ export default function HomePage() {
               className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-brand-teal/25 md:block"
               aria-hidden="true"
             />
-            <ol className="grid gap-8 md:grid-cols-3 md:gap-4">
-              {howItWorksSteps.map((step) => (
-                <li key={step.step} className="relative text-center md:px-2">
-                  <span className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-coral text-2xl font-extrabold text-white shadow-soft">
-                    {step.step}
-                  </span>
-                  <h3 className="text-base font-bold text-brand-navy">{step.title}</h3>
-                  <p className="mt-1 text-sm leading-snug text-brand-navy/65">{step.description}</p>
-                </li>
-              ))}
+            <ol className="grid gap-6 md:grid-cols-3 md:gap-5">
+              {howItWorksSteps.map((step, index) => {
+                const Icon = howItWorksIcons[index];
+                return (
+                  <li
+                    key={step.step}
+                    className="relative rounded-2xl bg-white p-6 text-center shadow-soft md:px-5 md:py-7"
+                  >
+                    <span className="mx-auto mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-coral text-2xl font-extrabold text-white shadow-soft">
+                      {step.step}
+                    </span>
+                    <Icon className="mx-auto mb-3 h-6 w-6 text-brand-teal" aria-hidden="true" />
+                    <h3 className="text-base font-bold text-brand-navy">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-snug text-brand-navy/65">{step.description}</p>
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </Container>
@@ -242,22 +254,18 @@ export default function HomePage() {
       {/* Gallery */}
       <section className="py-12 sm:py-16">
         <Container>
-          <SectionHeading title="The I Scream Experience" align="center" className="mb-8" />
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:grid-rows-[repeat(3,minmax(0,1fr))] md:gap-4">
-            {homepageGallery.map((image, index) => (
+          <SectionHeading title="The iScream Experience" align="center" className="mb-8" />
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {homepageGallery.map((image) => (
               <div
                 key={image.src}
-                className={`group relative overflow-hidden rounded-2xl shadow-soft ${
-                  index === 0
-                    ? "col-span-2 aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto md:min-h-[280px]"
-                    : "aspect-square"
-                }`}
+                className="group relative aspect-square overflow-hidden rounded-2xl shadow-soft"
               >
                 <SiteImage
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes={index === 0 ? "(max-width: 768px) 100vw, 40vw" : "(max-width: 768px) 50vw, 20vw"}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   objectPosition={image.objectPosition}
                   className="image-hover-zoom"
                 />
@@ -277,7 +285,7 @@ export default function HomePage() {
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
               <SiteImage
-                imageKey="truckSideProfile"
+                imageKey="truckAngleCloseup"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -288,7 +296,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl font-extrabold sm:text-4xl">The Truck Is Just the Beginning</h2>
               <p className="mt-3 text-base leading-relaxed text-white/85 sm:text-lg">
-                I Scream Yogurt is building something bigger for Sacramento. Every visit, follow,
+                {business.name} is building something bigger for Sacramento. Every visit, follow,
                 booking, and shared dessert helps move the dream of a future brick-and-mortar frozen
                 yogurt destination forward.
               </p>

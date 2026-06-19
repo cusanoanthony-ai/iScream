@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "I Scream Yogurt — Sacramento mobile frozen yogurt truck";
+export const alt = "iScream Yogurt — Sacramento mobile frozen yogurt truck";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OgImage() {
         }}
       >
         <div style={{ fontSize: 32, fontWeight: 800, color: "#FFF9F2", marginBottom: 12 }}>
-          I Scream Yogurt
+          iScream Yogurt
         </div>
         <div style={{ fontSize: 52, fontWeight: 800, lineHeight: 1.08, maxWidth: 900 }}>
           Sacramento&apos;s Mobile Frozen Yogurt Experience

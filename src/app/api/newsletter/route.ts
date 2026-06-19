@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { email } = parsed.data;
-    const subject = "I Scream Yogurt Newsletter Signup";
+    const subject = "iScream Yogurt Newsletter Signup";
     const html = `
       <h2>New newsletter signup</h2>
       <p>A visitor subscribed to email updates from the website.</p>
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
 
     return successResponse(
-      "You're on the list! Thanks for joining the I Scream Yogurt journey.",
+      "You're on the list! Thanks for joining the iScream Yogurt journey.",
     );
   } catch {
     return serverErrorResponse();

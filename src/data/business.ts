@@ -1,5 +1,5 @@
 export const business = {
-  name: "I Scream Yogurt",
+  name: "iScream Yogurt",
   shortName: "ISY",
   primaryDescription: "Sacramento's mobile frozen yogurt experience.",
   secondaryDescription:
@@ -39,7 +39,7 @@ export const business = {
     },
   },
   footerDescription:
-    "I Scream Yogurt brings frozen yogurt, toppings, specialty treats, and unforgettable energy to events throughout the Sacramento area.",
+    "iScream Yogurt brings frozen yogurt, toppings, specialty treats, and unforgettable energy to events throughout the Sacramento area.",
 } as const;
 
 export type Business = typeof business;

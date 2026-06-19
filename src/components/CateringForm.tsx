@@ -214,7 +214,7 @@ export function CateringForm() {
       <input type="text" name="website" value={form.website} onChange={(e) => updateField("website", e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
       <p className="text-sm text-brand-navy/70">
-        Submitting this form does not guarantee availability. The I Scream Yogurt team will follow up to discuss your event.
+        Submitting this form does not guarantee availability. The iScream Yogurt team will follow up to discuss your event.
       </p>
 
       <PrimaryButton type="submit" loading={loading} disabled={loading}>

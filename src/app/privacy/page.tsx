@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata = createPageMetadata({
   title: "Privacy Policy",
-  description: "Privacy policy for the I Scream Yogurt website.",
+  description: "Privacy policy for the iScream Yogurt website.",
   path: "/privacy",
 });
 
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-bold text-brand-navy">Email Updates</h2>
               <p className="mt-3 leading-relaxed">
                 If you join our email list, we may send updates about truck locations, new treats,
-                catering availability, and news about the I Scream Yogurt journey. You may request
+                catering availability, and news about the iScream Yogurt journey. You may request
                 to be removed from email communications at any time by contacting us directly.
               </p>
             </section>

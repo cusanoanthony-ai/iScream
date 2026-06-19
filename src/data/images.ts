@@ -10,34 +10,34 @@ export const imageManifest = {
   // Truck
   truckSideProfile: {
     src: "/images/truck/truck-side-profile.webp",
-    alt: "I Scream Yogurt mobile dessert truck side profile in Sacramento",
+    alt: "iScream Yogurt mobile dessert truck side profile in Sacramento",
     objectPosition: "center",
     priority: true,
   },
   truckAngleCloseup: {
     src: "/images/truck/truck-angle-closeup.webp",
-    alt: "Close-up angle of the I Scream Yogurt truck with colorful branding",
+    alt: "Close-up angle of the iScream Yogurt truck with colorful branding",
     objectPosition: "center",
   },
   purpleFroyoTruck: {
     src: "/images/truck/purple-froyo-truck.webp",
-    alt: "I Scream Yogurt truck serving purple frozen yogurt",
+    alt: "iScream Yogurt truck serving purple frozen yogurt",
     objectPosition: "center",
   },
   fruityCerealShakeTruck: {
     src: "/images/truck/fruity-cereal-shake-truck.webp",
-    alt: "Fruity cereal milkshake held in front of the I Scream Yogurt truck",
+    alt: "Fruity cereal milkshake held in front of the iScream Yogurt truck",
     objectPosition: "center bottom",
   },
   berryCookieFroyoTruck: {
     src: "/images/truck/berry-cookie-froyo-truck.webp",
-    alt: "Berry cookie frozen yogurt cup in front of the I Scream Yogurt truck",
+    alt: "Berry cookie frozen yogurt cup in front of the iScream Yogurt truck",
     objectPosition: "center",
   },
   // Events
   truckServingCustomers: {
     src: "/images/events/truck-serving-customers.webp",
-    alt: "I Scream Yogurt truck serving customers at an event",
+    alt: "iScream Yogurt truck serving customers at an event",
     objectPosition: "center",
   },
   // Products
@@ -48,12 +48,12 @@ export const imageManifest = {
   },
   fruityPebblesFroyo: {
     src: "/images/products/fruity-pebbles-froyo.webp",
-    alt: "Fruity pebbles frozen yogurt cup from I Scream Yogurt",
+    alt: "Fruity pebbles frozen yogurt cup from iScream Yogurt",
     objectPosition: "center",
   },
   hotFudgeSundae: {
     src: "/images/products/hot-fudge-sundae.webp",
-    alt: "Hot fudge sundae with whipped topping from I Scream Yogurt",
+    alt: "Hot fudge sundae with whipped topping from iScream Yogurt",
     objectPosition: "center top",
   },
   orangeFloat: {
@@ -68,7 +68,7 @@ export const imageManifest = {
   },
   twoSpecialtyShakes: {
     src: "/images/products/two-specialty-shakes.webp",
-    alt: "Two specialty milkshakes from I Scream Yogurt",
+    alt: "Two specialty milkshakes from iScream Yogurt",
     objectPosition: "center",
   },
   peachCobblerSundae: {
@@ -94,48 +94,33 @@ export const imageManifest = {
   // Marketing
   cateringOfferFlyer: {
     src: "/images/marketing/catering-offer-flyer.webp",
-    alt: "I Scream Yogurt catering information flyer",
+    alt: "iScream Yogurt catering information flyer",
     objectPosition: "center",
   },
 } as const satisfies Record<string, SiteImageEntry>;
 
 export type ImageKey = keyof typeof imageManifest;
 
-/** Curated seven-image gallery for homepage — visual variety, no repetition */
+/** Curated four-image gallery — truck anchor plus three hero-grade products */
 export const homepageGallery: SiteImageEntry[] = [
   {
-    src: "/images/gallery/truck-side-profile.webp",
-    alt: "I Scream Yogurt truck side profile",
+    src: "/images/truck/truck-side-profile.webp",
+    alt: "iScream Yogurt truck side profile",
     objectPosition: "center",
   },
   {
-    src: "/images/gallery/truck-serving-customers.webp",
-    alt: "I Scream Yogurt truck serving guests at an event",
-    objectPosition: "center",
-  },
-  {
-    src: "/images/gallery/hot-fudge-sundae.webp",
-    alt: "Hot fudge sundae from I Scream Yogurt",
+    src: "/images/products/hot-fudge-sundae.webp",
+    alt: "Hot fudge sundae from iScream Yogurt",
     objectPosition: "center top",
   },
   {
-    src: "/images/gallery/mango-chamoy-cups.webp",
-    alt: "Mango chamoy cups from I Scream Yogurt",
+    src: "/images/products/mango-chamoy-cups.webp",
+    alt: "Mango chamoy cups from iScream Yogurt",
     objectPosition: "center",
   },
   {
-    src: "/images/products/peach-cobbler-tall.webp",
-    alt: "Tall peach cobbler dessert cup from I Scream Yogurt",
-    objectPosition: "center top",
-  },
-  {
-    src: "/images/gallery/orange-float.webp",
-    alt: "Orange cream float from I Scream Yogurt",
-    objectPosition: "center",
-  },
-  {
-    src: "/images/gallery/berry-cookie-froyo-truck.webp",
-    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
+    src: "/images/products/two-specialty-shakes.webp",
+    alt: "Two specialty milkshakes from iScream Yogurt",
     objectPosition: "center",
   },
 ];
@@ -144,17 +129,17 @@ export const homepageGallery: SiteImageEntry[] = [
 export const galleryManifest: SiteImageEntry[] = [
   {
     src: "/images/gallery/berry-cookie-froyo-truck.webp",
-    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
+    alt: "Berry cookie frozen yogurt at the iScream Yogurt truck",
     objectPosition: "center",
   },
   {
     src: "/images/gallery/peach-cobbler-sundae.webp",
-    alt: "Peach cobbler sundae at I Scream Yogurt",
+    alt: "Peach cobbler sundae at iScream Yogurt",
     objectPosition: "center",
   },
   {
     src: "/images/gallery/mango-chamoy-cups.webp",
-    alt: "Mango chamoy cups from I Scream Yogurt",
+    alt: "Mango chamoy cups from iScream Yogurt",
     objectPosition: "center",
   },
   {
@@ -169,17 +154,17 @@ export const galleryManifest: SiteImageEntry[] = [
   },
   {
     src: "/images/gallery/truck-serving-customers.webp",
-    alt: "I Scream Yogurt truck serving guests at an event",
+    alt: "iScream Yogurt truck serving guests at an event",
     objectPosition: "center",
   },
   {
     src: "/images/gallery/truck-side-profile.webp",
-    alt: "I Scream Yogurt truck side profile",
+    alt: "iScream Yogurt truck side profile",
     objectPosition: "center",
   },
   {
     src: "/images/gallery/hot-fudge-sundae.webp",
-    alt: "Hot fudge sundae from I Scream Yogurt",
+    alt: "Hot fudge sundae from iScream Yogurt",
     objectPosition: "center top",
   },
 ];

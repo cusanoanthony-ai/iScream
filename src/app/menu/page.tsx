@@ -10,7 +10,7 @@ import { PrimaryButton } from "@/components/PrimaryButton";
 export const metadata = createPageMetadata({
   title: "Menu",
   description:
-    "Explore frozen yogurt, specialty creations, floats, and shakes from I Scream Yogurt's mobile dessert truck.",
+    "Explore frozen yogurt, specialty creations, floats, and shakes from iScream Yogurt's mobile dessert truck.",
   path: "/menu",
 });
 
@@ -97,7 +97,7 @@ export default function MenuPage() {
           <div className="rounded-3xl bg-brand-coral/10 p-8 text-center sm:p-10">
             <h2 className="text-2xl font-bold text-brand-navy">Planning an Event?</h2>
             <p className="mt-2 text-brand-navy/75">
-              Bring the full I Scream Yogurt experience to your next celebration.
+              Bring the full iScream Yogurt experience to your next celebration.
             </p>
             <PrimaryButton href="/catering" className="mt-6" trackAs="book_truck_click">
               Book Your Event

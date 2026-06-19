@@ -27,7 +27,7 @@ export function JsonLd() {
     menu: `${siteUrl}/menu`,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "I Scream Yogurt Menu",
+      name: "iScream Yogurt Menu",
       itemListElement: [
         {
           "@type": "Offer",

@@ -52,7 +52,7 @@ export function Logo({ className, variant = "default", size = "default" }: LogoP
       )}
       style={isHeader ? { minWidth: "150px", maxWidth: "190px" } : undefined}
     >
-      <span className="block">I Scream</span>
+      <span className="block">iScream</span>
       <span className={cn("block", isLight ? "text-brand-cream" : "text-brand-teal")}>
         Yogurt
       </span>

@@ -3,7 +3,7 @@ import { business, getSiteUrl } from "@/data/business";
 
 describe("business configuration", () => {
   it("has correct business name", () => {
-    expect(business.name).toBe("I Scream Yogurt");
+    expect(business.name).toBe("iScream Yogurt");
   });
 
   it("has valid phone link", () => {

@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { name, email, phone, reason, message } = parsed.data;
-    const subject = `I Scream Yogurt Website Contact – ${reason} – ${name}`;
+    const subject = `iScream Yogurt Website Contact – ${reason} – ${name}`;
     const html = `
       <h2>New website contact message</h2>
       ${formatFieldsHtml({ name, email, phone, reason, message })}

@@ -65,13 +65,13 @@ export const siteMetadata: Metadata = {
     template: `%s | ${business.name}`,
   },
   description:
-    "Find I Scream Yogurt around Sacramento or book the mobile frozen yogurt truck for parties, school events, company gatherings, and community celebrations.",
+    "Find iScream Yogurt around Sacramento or book the mobile frozen yogurt truck for parties, school events, company gatherings, and community celebrations.",
   keywords: [
     "frozen yogurt",
     "food truck",
     "Sacramento",
     "catering",
     "mobile dessert",
-    "I Scream Yogurt",
+    "iScream Yogurt",
   ],
 };

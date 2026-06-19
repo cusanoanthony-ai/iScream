@@ -11,7 +11,7 @@ import { PrimaryButton } from "@/components/PrimaryButton";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact I Scream Yogurt by phone, email, or form. Follow us on Instagram and StreetFoodFinder for the latest truck schedule.",
+    "Contact iScream Yogurt by phone, email, or form. Follow us on Instagram and StreetFoodFinder for the latest truck schedule.",
   path: "/contact",
 });
 
@@ -20,28 +20,17 @@ export default function ContactPage() {
     <>
       <section className="hero-gradient py-12 sm:py-16">
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <SectionHeading
-              title="Let's Make Something Sweet Happen"
-              description="Questions, ideas, or just want to say hi? Reach out — and for events, head to our catering page."
-              titleAs="h1"
-            />
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-3xl shadow-card lg:max-w-none">
-              <SiteImage
-                imageKey="berryCookieFroyoTruck"
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                rounded="3xl"
-              />
-            </div>
-          </div>
+          <SectionHeading
+            title="Let's Make Something Sweet Happen"
+            description="Questions, ideas, or just want to say hi? Reach out — and for events, head to our catering page."
+            titleAs="h1"
+          />
         </Container>
       </section>
 
       <section className="py-14 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-5">
+          <div className="grid gap-12 lg:grid-cols-5 lg:items-start">
             <div className="space-y-6 lg:col-span-2">
               <h2 className="text-xl font-bold text-brand-navy">Get in Touch</h2>
               <div className="space-y-3">
@@ -93,18 +82,30 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="rounded-2xl border border-brand-navy/5 bg-white p-6 shadow-card sm:p-8">
-                <h2 className="text-xl font-bold text-brand-navy">Send a Message</h2>
-                <p className="mt-2 text-sm text-brand-navy/70">
-                  For event bookings, please use our{" "}
-                  <a href="/catering" className="font-bold text-brand-teal hover:text-brand-pink">
-                    catering request form
-                  </a>
-                  . If online messaging is unavailable, call {business.phone.display} or message{" "}
-                  {business.social.instagram.handle} on Instagram.
-                </p>
-                <div className="mt-6">
-                  <ContactForm />
+              <div className="grid gap-8 lg:grid-cols-5">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-card lg:col-span-2 lg:aspect-auto lg:min-h-[320px]">
+                  <SiteImage
+                    imageKey="hotFudgeSundae"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 280px"
+                    rounded="2xl"
+                    objectPosition="center top"
+                  />
+                </div>
+                <div className="rounded-2xl border border-brand-navy/5 bg-white p-6 shadow-card sm:p-8 lg:col-span-3">
+                  <h2 className="text-xl font-bold text-brand-navy">Send a Message</h2>
+                  <p className="mt-2 text-sm text-brand-navy/70">
+                    For event bookings, please use our{" "}
+                    <a href="/catering" className="font-bold text-brand-teal hover:text-brand-pink">
+                      catering request form
+                    </a>
+                    . If online messaging is unavailable, call {business.phone.display} or message{" "}
+                    {business.social.instagram.handle} on Instagram.
+                  </p>
+                  <div className="mt-6">
+                    <ContactForm />
+                  </div>
                 </div>
               </div>
             </div>

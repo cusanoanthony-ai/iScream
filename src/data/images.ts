@@ -11,7 +11,7 @@ export const imageManifest = {
   truckSideProfile: {
     src: "/images/truck/truck-side-profile.webp",
     alt: "iScream Yogurt mobile dessert truck side profile in Sacramento",
-    objectPosition: "center",
+    objectPosition: "center 72%",
     priority: true,
   },
   truckAngleCloseup: {

@@ -18,7 +18,7 @@ const cateringIcons = {
   heart: Heart,
 };
 
-/** Branded catering visual — one dessert photo plus logo and event chips, no truck repeat */
+/** Catering visual — one strong product photo plus logo and event chips */
 export function CateringGraphicPanel() {
   return (
     <div className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -27,13 +27,14 @@ export function CateringGraphicPanel() {
         <div className="relative space-y-6">
           <Logo variant="light" size="md" />
 
-          <div className="relative mx-auto aspect-[4/3] max-w-[280px] overflow-hidden rounded-2xl border-4 border-white/90 shadow-card">
+          <div className="relative mx-auto aspect-[4/5] max-w-[300px] overflow-hidden rounded-2xl border-4 border-white/90 shadow-card">
             <SiteImage
-              imageKey="berryCookieFroyoTruck"
+              imageKey="hotFudgeSundae"
               alt=""
               fill
-              sizes="280px"
+              sizes="300px"
               rounded="xl"
+              objectPosition="center top"
             />
           </div>
 

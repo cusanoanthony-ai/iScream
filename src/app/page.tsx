@@ -85,8 +85,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
-              <div className="relative aspect-[5/4] overflow-hidden rounded-3xl bg-white shadow-lift sm:aspect-[4/3]">
+            <div className="relative order-1 mx-auto w-full max-w-lg lg:order-2 lg:max-w-none">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-white shadow-lift sm:aspect-[5/3]">
                 <SiteImage
                   imageKey="truckSideProfile"
                   alt=""
@@ -94,19 +94,8 @@ export default function HomePage() {
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   rounded="3xl"
+                  objectPosition="center 72%"
                 />
-              </div>
-              <div className="absolute -bottom-2 -left-1 z-10 w-[28%] max-w-[140px] overflow-hidden rounded-2xl border-4 border-white shadow-card sm:-left-3 sm:max-w-[150px]">
-                <div className="relative aspect-square">
-                  <SiteImage
-                    imageKey="fruityCerealShakeTruck"
-                    alt=""
-                    fill
-                    sizes="150px"
-                    rounded="xl"
-                    objectPosition="center bottom"
-                  />
-                </div>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { SprinklePattern } from "@/components/SprinklePattern";
-import { BrandStatementPanel } from "@/components/brand/BrandStatementPanel";
+import { StoryJourneyGraphic } from "@/components/brand/StoryJourneyGraphic";
 import { LogoFeatureCard } from "@/components/brand/LogoFeatureCard";
 
 export const metadata = createPageMetadata({
@@ -45,7 +45,7 @@ export default function OurStoryPage() {
               titleAs="h1"
               className="text-white"
             />
-            <BrandStatementPanel />
+            <StoryJourneyGraphic />
           </div>
         </Container>
       </section>

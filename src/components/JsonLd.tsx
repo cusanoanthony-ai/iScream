@@ -9,7 +9,6 @@ export function JsonLd() {
     name: business.name,
     description: business.primaryDescription,
     url: siteUrl,
-    telephone: business.phone.display,
     email: business.email.display,
     areaServed: {
       "@type": "City",
@@ -41,7 +40,6 @@ export function JsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: business.phone.display,
       contactType: "customer service",
       email: business.email.display,
       availableLanguage: "English",

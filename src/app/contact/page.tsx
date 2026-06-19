@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook, Navigation } from "lucide-react";
+import { MapPin, Mail, Instagram, Facebook, Navigation } from "lucide-react";
 import { business } from "@/data/business";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
@@ -11,7 +11,7 @@ import { PrimaryButton } from "@/components/PrimaryButton";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact iScream Yogurt by phone, email, or form. Follow us on Instagram and StreetFoodFinder for the latest truck schedule.",
+    "Contact iScream Yogurt by email or form. Follow us on Instagram and StreetFoodFinder for the latest truck schedule.",
   path: "/contact",
 });
 
@@ -35,17 +35,10 @@ export default function ContactPage() {
               <h2 className="text-xl font-bold text-brand-navy">Get in Touch</h2>
               <div className="space-y-3">
                 <a
-                  href={business.phone.href}
+                  href={business.email.href}
                   className="flex min-h-12 items-center gap-3 rounded-xl bg-brand-pink/10 px-4 font-bold text-brand-navy transition-colors hover:bg-brand-pink/15"
                 >
-                  <Phone className="h-5 w-5 text-brand-pink" aria-hidden="true" />
-                  {business.phone.display}
-                </a>
-                <a
-                  href={business.email.href}
-                  className="flex min-h-12 items-center gap-3 rounded-xl bg-white px-4 text-brand-navy shadow-soft transition-colors hover:text-brand-teal"
-                >
-                  <Mail className="h-5 w-5 text-brand-teal" aria-hidden="true" />
+                  <Mail className="h-5 w-5 text-brand-pink" aria-hidden="true" />
                   {business.email.display}
                 </a>
                 <p className="flex items-start gap-3 px-1 text-brand-navy/75">
@@ -100,7 +93,7 @@ export default function ContactPage() {
                     <a href="/catering" className="font-bold text-brand-teal hover:text-brand-pink">
                       catering request form
                     </a>
-                    . If online messaging is unavailable, call {business.phone.display} or message{" "}
+                    . If online messaging is unavailable, email {business.email.display} or message{" "}
                     {business.social.instagram.handle} on Instagram.
                   </p>
                   <div className="mt-6">

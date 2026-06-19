@@ -83,4 +83,4 @@ function escapeHtml(text: string): string {
 }
 
 export const emailUnavailableMessage =
-  "We're unable to send your message online right now. Please call 209.331.4615 or send a direct message to @iscreamyogurt on Instagram.";
+  "We're unable to send your message online right now. Please email iscreamyogurt@gmail.com or send a direct message to @iscreamyogurt on Instagram.";

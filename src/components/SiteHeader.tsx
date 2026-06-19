@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import { primaryNav } from "@/data/navigation";
-import { business } from "@/data/business";
-import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { LogoLink } from "./Logo";
@@ -79,14 +77,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-4 lg:justify-self-end">
-            <Link
-              href={business.phone.href}
-              className="hidden items-center gap-1.5 text-sm font-medium text-brand-navy/70 transition-colors hover:text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal lg:inline-flex"
-              onClick={() => trackEvent("call_click")}
-            >
-              <Phone className="h-4 w-4 shrink-0 text-brand-teal" aria-hidden="true" />
-              <span className="hidden xl:inline">{business.phone.display}</span>
-            </Link>
             <PrimaryButton
               href="/catering"
               trackAs="book_truck_click"

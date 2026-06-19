@@ -96,10 +96,6 @@ export default function PrivacyPage() {
                 To request removal of information you submitted through this website, contact us at{" "}
                 <a href={business.email.href} className="font-bold text-brand-teal hover:text-brand-pink">
                   {business.email.display}
-                </a>{" "}
-                or call{" "}
-                <a href={business.phone.href} className="font-bold text-brand-teal hover:text-brand-pink">
-                  {business.phone.display}
                 </a>
                 .
               </p>

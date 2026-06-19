@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { X, Instagram, Phone } from "lucide-react";
+import { X, Instagram } from "lucide-react";
 import { primaryNav } from "@/data/navigation";
 import { business } from "@/data/business";
 import { trackEvent } from "@/lib/analytics";
@@ -62,7 +62,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white text-brand-navy shadow-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal"
+            className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-cream text-brand-navy shadow-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal"
             aria-label="Close navigation menu"
           >
             <X className="h-6 w-6" />
@@ -75,7 +75,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 href={item.href}
                 onClick={onClose}
                 className={cn(
-                  "flex min-h-12 items-center rounded-lg px-3 text-base font-semibold text-brand-navy hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal",
+                  "flex min-h-12 items-center rounded-lg px-3 text-base font-semibold text-brand-navy hover:bg-brand-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal",
                   (item.href === "/find-us" || item.href === "/catering") && "font-extrabold",
                 )}
               >
@@ -88,17 +88,6 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           <PrimaryButton href="/catering" className="w-full" trackAs="book_truck_click" onClick={onClose}>
             Book the Truck
           </PrimaryButton>
-          <a
-            href={business.phone.href}
-            onClick={() => {
-              trackEvent("call_click");
-              onClose();
-            }}
-            className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full border-2 border-brand-navy/15 bg-white text-sm font-bold text-brand-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-teal"
-          >
-            <Phone className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-            Call {business.phone.display}
-          </a>
           <a
             href={business.social.instagram.url}
             target="_blank"

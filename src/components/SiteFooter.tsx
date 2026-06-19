@@ -52,10 +52,7 @@ export function SiteFooter() {
               {business.footerDescription}
             </p>
             <div className="mt-6 space-y-2 text-sm">
-              <a href={business.phone.href} className="block text-lg font-bold text-white hover:text-brand-cream">
-                {business.phone.display}
-              </a>
-              <a href={business.email.href} className="block text-white/90 hover:text-white">
+              <a href={business.email.href} className="block text-lg font-bold text-white hover:text-brand-cream">
                 {business.email.display}
               </a>
               <p className="inline-flex items-center gap-1.5 text-white/90">

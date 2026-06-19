@@ -2,10 +2,11 @@ import { business } from "@/data/business";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import { SiteImage } from "@/components/SiteImage";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { SprinklePattern } from "@/components/SprinklePattern";
+import { BrandStatementPanel } from "@/components/brand/BrandStatementPanel";
+import { LogoFeatureCard } from "@/components/brand/LogoFeatureCard";
 
 export const metadata = createPageMetadata({
   title: "Our Story",
@@ -36,22 +37,15 @@ export default function OurStoryPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy py-12 text-white sm:py-16">
+        <SprinklePattern variant="dark" className="opacity-10" aria-hidden="true" />
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <SectionHeading
               title="A Food Truck With a Bigger Dream"
               titleAs="h1"
               className="text-white"
             />
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-lift">
-              <SiteImage
-                imageKey="truckSideProfile"
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                rounded="3xl"
-              />
-            </div>
+            <BrandStatementPanel />
           </div>
         </Container>
       </section>
@@ -71,15 +65,10 @@ export default function OurStoryPage() {
               eventually create a permanent destination where customers can enjoy more flavors,
               more choices, and the same energy they know from the truck.
             </p>
-            <div
-              className="rounded-2xl border-l-4 border-brand-pink bg-brand-pink/5 px-6 py-5"
-              role="presentation"
-            >
-              <p className="text-xl font-extrabold leading-snug text-brand-navy">
-                We&apos;re not only serving dessert — we&apos;re building the community that
-                can help turn a mobile favorite into a permanent Sacramento destination.
-              </p>
-            </div>
+            <LogoFeatureCard
+              tagline="We're building the community that can help turn a mobile favorite into a permanent Sacramento destination."
+              className="!bg-brand-pink/5 !text-brand-navy !shadow-soft"
+            />
           </div>
         </Container>
       </section>

@@ -101,13 +101,8 @@ export const imageManifest = {
 
 export type ImageKey = keyof typeof imageManifest;
 
-/** Curated four-image gallery — truck anchor plus three hero-grade products */
+/** Curated four-image gallery — product variety only; truck lives in homepage hero */
 export const homepageGallery: SiteImageEntry[] = [
-  {
-    src: "/images/truck/truck-side-profile.webp",
-    alt: "iScream Yogurt truck side profile",
-    objectPosition: "center",
-  },
   {
     src: "/images/products/hot-fudge-sundae.webp",
     alt: "Hot fudge sundae from iScream Yogurt",
@@ -121,6 +116,11 @@ export const homepageGallery: SiteImageEntry[] = [
   {
     src: "/images/products/two-specialty-shakes.webp",
     alt: "Two specialty milkshakes from iScream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/truck/berry-cookie-froyo-truck.webp",
+    alt: "Berry cookie frozen yogurt at the iScream Yogurt truck",
     objectPosition: "center",
   },
 ];

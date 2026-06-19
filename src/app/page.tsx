@@ -1,6 +1,5 @@
 import {
   MapPin,
-  Phone,
   PartyPopper,
   GraduationCap,
   Building2,
@@ -9,6 +8,7 @@ import {
   ClipboardList,
   CalendarCheck,
   Truck,
+  Mail,
 } from "lucide-react";
 import { business } from "@/data/business";
 import { productPreview } from "@/data/menu";
@@ -22,10 +22,9 @@ import { SiteImage } from "@/components/SiteImage";
 import { ProductCard } from "@/components/ProductCard";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { ScheduleCTA } from "@/components/ScheduleCTA";
-import { NewsletterForm } from "@/components/NewsletterForm";
 import { SprinklePattern } from "@/components/SprinklePattern";
-import { CateringCollage } from "@/components/CateringCollage";
-import { StorefrontOutline } from "@/components/StorefrontOutline";
+import { CateringGraphicPanel } from "@/components/brand/CateringGraphicPanel";
+import { FutureStorefrontGraphic } from "@/components/brand/FutureStorefrontGraphic";
 
 export const metadata = createPageMetadata({
   title: "iScream Yogurt | Sacramento Frozen Yogurt Truck & Catering",
@@ -47,7 +46,7 @@ const cateringIcons = {
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — sole homepage truck photo */}
       <section className="hero-gradient relative overflow-hidden pb-10 pt-6 sm:pb-14 sm:pt-8 lg:pb-16">
         <SprinklePattern className="opacity-25" aria-hidden="true" />
         <Container className="relative">
@@ -80,16 +79,10 @@ export default function HomePage() {
               <div className="mt-4">
                 <InstagramCTA variant="compact" className="!py-2 !text-sm" />
               </div>
-              <div className="mt-3 flex flex-wrap items-center gap-4 text-sm font-semibold text-brand-navy/75">
-                <a href={business.phone.href} className="inline-flex items-center gap-1.5 hover:text-brand-coral">
-                  <Phone className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-                  {business.phone.display}
-                </a>
-                <span className="inline-flex items-center gap-1.5">
-                  <MapPin className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-                  {business.location.display}
-                </span>
-              </div>
+              <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-navy/75">
+                <MapPin className="h-4 w-4 text-brand-teal" aria-hidden="true" />
+                {business.location.display}
+              </p>
             </div>
 
             <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
@@ -140,12 +133,12 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Catering */}
+      {/* Catering — branded graphic panel, no truck repeat */}
       <section className="relative overflow-hidden bg-brand-teal py-12 text-white sm:py-16 lg:py-20">
         <SprinklePattern variant="dark" className="opacity-15" aria-hidden="true" />
         <Container className="relative">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <CateringCollage />
+            <CateringGraphicPanel />
             <div>
               <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
                 We Cater Sweet Memories
@@ -181,7 +174,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* How It Works */}
+      {/* How It Works — design only */}
       <section className="border-y border-brand-navy/5 bg-brand-cream py-12 sm:py-14">
         <Container>
           <SectionHeading title="Bringing the Truck Is Easy" align="center" className="mb-8" />
@@ -212,46 +205,33 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Find the Truck */}
-      <section className="bg-white py-12 sm:py-16">
-        <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="relative aspect-[16/11] overflow-hidden rounded-3xl shadow-card lg:order-2">
-              <SiteImage
-                imageKey="truckAngleCloseup"
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                rounded="3xl"
-              />
-            </div>
-            <div className="lg:order-1">
-              <SectionHeading
-                title="Catch Us Around Sacramento"
-                description="Our schedule changes throughout the week — confirm before you head out."
-              />
-              <div className="mt-6 rounded-2xl border border-brand-teal/20 bg-brand-cream p-5 shadow-soft sm:p-6">
-                <p className="text-sm font-semibold text-brand-navy/80">
-                  Our schedule changes throughout the week.
-                </p>
-                <div className="mt-4 flex flex-col gap-3">
-                  <ScheduleCTA />
-                  <InstagramCTA variant="compact" />
-                </div>
-                <a
-                  href={business.phone.href}
-                  className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-teal"
-                >
-                  <Phone className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-                  Call {business.phone.display}
-                </a>
+      {/* Find the Truck — schedule cards only, no truck photo */}
+      <section className="relative bg-white py-12 sm:py-16">
+        <SprinklePattern className="opacity-10" aria-hidden="true" />
+        <Container className="relative">
+          <div className="mx-auto max-w-2xl">
+            <SectionHeading
+              title="Catch Us Around Sacramento"
+              description="Our schedule changes throughout the week — confirm before you head out."
+              align="center"
+            />
+            <div className="mt-8 rounded-2xl border border-brand-teal/20 bg-brand-cream p-5 shadow-soft sm:p-8">
+              <p className="text-center text-sm font-semibold text-brand-navy/80">
+                Our schedule changes throughout the week.
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
+                <ScheduleCTA />
+                <InstagramCTA variant="compact" />
+              </div>
+              <div className="mt-6 text-center">
+                <SecondaryButton href="/find-us">View Full Schedule Info</SecondaryButton>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery — products only */}
       <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading title="The iScream Experience" align="center" className="mb-8" />
@@ -278,42 +258,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Future Storefront */}
-      <section className="relative overflow-hidden bg-brand-navy py-12 text-white sm:py-16">
+      {/* Future Storefront — graphic panel, no truck photo */}
+      <section className="relative overflow-hidden bg-brand-navy py-12 sm:py-16">
         <SprinklePattern variant="dark" className="opacity-10" aria-hidden="true" />
         <Container className="relative">
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
-              <SiteImage
-                imageKey="truckAngleCloseup"
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                rounded="3xl"
-              />
-              <StorefrontOutline className="pointer-events-none absolute inset-x-4 bottom-4 h-24 w-[calc(100%-2rem)] text-white/30" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-extrabold sm:text-4xl">The Truck Is Just the Beginning</h2>
-              <p className="mt-3 text-base leading-relaxed text-white/85 sm:text-lg">
-                {business.name} is building something bigger for Sacramento. Every visit, follow,
-                booking, and shared dessert helps move the dream of a future brick-and-mortar frozen
-                yogurt destination forward.
-              </p>
-              <p className="mt-3 text-lg font-bold text-brand-coral">
-                More flavors. More memories. One future home.
-              </p>
-              <div className="mt-6 max-w-md rounded-2xl bg-white/10 p-5 backdrop-blur-sm sm:p-6">
-                <h3 className="font-bold">Join the Journey</h3>
-                <p className="mt-1 text-sm text-white/80">
-                  Get updates on the truck and the path toward a future storefront.
-                </p>
-                <div className="mt-4">
-                  <NewsletterForm variant="light" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <FutureStorefrontGraphic />
         </Container>
       </section>
 
@@ -332,11 +281,11 @@ export default function HomePage() {
               Check Event Availability
             </PrimaryButton>
             <SecondaryButton
-              href={business.phone.href}
-              trackAs="call_click"
-              className="!border-white !bg-transparent !text-white hover:!bg-white hover:!text-brand-navy"
+              href={business.email.href}
+              className="!inline-flex !items-center !gap-2 !border-white !bg-transparent !text-white hover:!bg-white hover:!text-brand-navy"
             >
-              Call {business.phone.display}
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              Email Us
             </SecondaryButton>
           </div>
         </Container>

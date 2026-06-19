@@ -1,4 +1,4 @@
-import { MapPin, Phone, Instagram, Navigation } from "lucide-react";
+import { MapPin, Instagram, Navigation } from "lucide-react";
 import { business } from "@/data/business";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
@@ -59,13 +59,6 @@ export default function FindUsPage() {
                 <ScheduleCTA />
                 <InstagramCTA variant="compact" />
               </div>
-              <a
-                href={business.phone.href}
-                className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-teal"
-              >
-                <Phone className="h-4 w-4 text-brand-teal" aria-hidden="true" />
-                Call {business.phone.display}
-              </a>
             </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CateringForm } from "@/components/CateringForm";
-import { CateringCollage } from "@/components/CateringCollage";
+import { CateringGraphicPanel } from "@/components/brand/CateringGraphicPanel";
 import { SprinklePattern } from "@/components/SprinklePattern";
 
 export const metadata = createPageMetadata({
@@ -27,7 +27,7 @@ export default function CateringPage() {
               titleAs="h1"
               className="text-white [&_p]:text-white/90"
             />
-            <CateringCollage />
+            <CateringGraphicPanel />
           </div>
         </Container>
       </section>

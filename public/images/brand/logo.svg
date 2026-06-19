@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none" role="img" aria-label="iScream Yogurt">
+  <title>iScream Yogurt</title>
+  <rect x="188" y="4" width="10" height="10" rx="5" fill="#ff665f"/>
+  <rect x="204" y="12" width="8" height="8" rx="4" fill="#ed3c83"/>
+  <rect x="216" y="6" width="7" height="7" rx="3.5" fill="#16a9a5"/>
+  <text x="0" y="36" font-family="Fredoka, Nunito, system-ui, sans-serif" font-size="34" font-weight="800" fill="#123047">
+    <tspan fill="#ff665f">i</tspan><tspan>Scream</tspan>
+  </text>
+  <text x="2" y="58" font-family="Fredoka, Nunito, system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="0.12em" fill="#16a9a5">YOGURT</text>
+  <path d="M172 48c8-10 14-10 22 0" stroke="#ed3c83" stroke-width="3" stroke-linecap="round"/>
+</svg>

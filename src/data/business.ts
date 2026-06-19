@@ -5,10 +5,6 @@ export const business = {
   secondaryDescription:
     "Frozen yogurt, bold toppings, and sweet memories served at parties, events, workplaces, schools, and community gatherings throughout the Sacramento area.",
   tagline: "Yogurt so delicious, it'll make you SCREAM.",
-  phone: {
-    display: "209.331.4615",
-    href: "tel:+12093314615",
-  },
   email: {
     display: "iscreamyogurt@gmail.com",
     href: "mailto:iscreamyogurt@gmail.com",

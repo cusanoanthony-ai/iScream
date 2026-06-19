@@ -6,9 +6,9 @@ describe("business configuration", () => {
     expect(business.name).toBe("iScream Yogurt");
   });
 
-  it("has valid phone link", () => {
-    expect(business.phone.href).toBe("tel:+12093314615");
-    expect(business.phone.display).toBe("209.331.4615");
+  it("has valid email link", () => {
+    expect(business.email.href).toBe("mailto:iscreamyogurt@gmail.com");
+    expect(business.email.display).toBe("iscreamyogurt@gmail.com");
   });
 
   it("has Instagram URL", () => {

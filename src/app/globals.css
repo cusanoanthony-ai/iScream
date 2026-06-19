@@ -12,7 +12,8 @@
   --font-body: var(--font-nunito), system-ui, sans-serif;
 
   --shadow-soft: 0 4px 24px rgba(18, 48, 71, 0.08);
-  --shadow-card: 0 8px 32px rgba(18, 48, 71, 0.1);
+  --shadow-card: 0 8px 32px rgba(18, 48, 71, 0.12);
+  --shadow-lift: 0 16px 48px rgba(18, 48, 71, 0.14);
 }
 
 :root {
@@ -69,11 +70,36 @@
     @apply text-brand-pink italic;
   }
 
-  .section-curve-top {
-    clip-path: ellipse(120% 100% at 50% 100%);
+  .section-wave-bottom {
+    position: relative;
   }
 
-  .section-curve-bottom {
-    clip-path: ellipse(120% 100% at 50% 0%);
+  .section-wave-bottom::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 48px;
+    background: var(--wave-color, var(--brand-cream));
+    clip-path: ellipse(55% 100% at 50% 0%);
+    pointer-events: none;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--brand-cream) 0%,
+      #ffffff 45%,
+      rgba(22, 169, 165, 0.08) 100%
+    );
+  }
+
+  .image-hover-zoom {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .group:hover .image-hover-zoom {
+    @apply scale-[1.03];
   }
 }

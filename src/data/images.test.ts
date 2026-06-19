@@ -1,32 +1,20 @@
 import { describe, it, expect } from "vitest";
-import { imageManifest, galleryImages } from "@/data/images";
+import { imageManifest, galleryManifest, getAllProductionImagePaths } from "@/data/images";
 import fs from "fs";
 import path from "path";
 
 describe("image manifest", () => {
-  it("defines all required image keys", () => {
+  it("defines all required truck and product keys", () => {
     const requiredKeys = [
-      "logo",
-      "heroTruck",
-      "truckSide",
-      "truckAtEvent",
-      "froyoCup",
-      "doleWhip",
-      "milkshake",
-      "sundae",
-      "smoothie",
-      "parfait",
-      "birthdayEvent",
-      "schoolEvent",
-      "companyEvent",
-      "communityEvent",
-      "ownerOrFamily",
-      "gallery01",
-      "gallery02",
-      "gallery03",
-      "gallery04",
-      "gallery05",
-      "gallery06",
+      "truckSideProfile",
+      "truckAngleCloseup",
+      "fruityCerealShakeTruck",
+      "truckServingCustomers",
+      "fruityPebblesFroyoCloseup",
+      "hotFudgeSundae",
+      "orangeFloat",
+      "twoSpecialtyShakes",
+      "cateringOfferFlyer",
     ];
 
     for (const key of requiredKeys) {
@@ -35,25 +23,21 @@ describe("image manifest", () => {
     }
   });
 
-  it("uses local public paths", () => {
+  it("uses webp paths under /images/", () => {
     for (const entry of Object.values(imageManifest)) {
-      expect(entry.src).toMatch(/^\/images\//);
+      expect(entry.src).toMatch(/^\/images\/.+\.webp$/);
     }
   });
 
-  it("has six gallery images", () => {
-    expect(galleryImages).toHaveLength(6);
+  it("has eight gallery images", () => {
+    expect(galleryManifest).toHaveLength(8);
   });
 
-  it("builds without real photos present", () => {
+  it("all production paths exist on disk", () => {
     const publicDir = path.join(process.cwd(), "public");
-    for (const entry of Object.values(imageManifest)) {
-      const filePath = path.join(publicDir, entry.src.replace(/^\//, ""));
-      const exists = fs.existsSync(filePath);
-      if (!exists) {
-        expect(entry.label).toBeTruthy();
-        expect(entry.placeholderIcon).toBeTruthy();
-      }
+    for (const webPath of getAllProductionImagePaths()) {
+      const filePath = path.join(publicDir, webPath.replace(/^\//, ""));
+      expect(fs.existsSync(filePath), `Missing: ${webPath}`).toBe(true);
     }
   });
 });

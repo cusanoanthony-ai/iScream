@@ -1,18 +1,16 @@
-export type MenuItem = {
-  name: string;
-  description?: string;
-  imageKey?: keyof typeof imageManifest;
-};
+import type { ImageKey } from "./images";
 
 export type MenuCategory = {
   id: string;
   name: string;
   description: string;
   items: MenuItem[];
-  imageKey?: keyof typeof imageManifest;
+  imageKeys: ImageKey[];
 };
 
-import { imageManifest } from "./images";
+export type MenuItem = {
+  name: string;
+};
 
 export const menuDisclaimer =
   "Menu items, flavors, toppings, and availability may change by event. Please contact us directly regarding allergies or dietary needs. We cannot guarantee an allergen-free preparation environment.";
@@ -23,12 +21,12 @@ export const menuCategories: MenuCategory[] = [
     name: "Frozen Yogurt",
     description:
       "Choose your frozen yogurt and finish it with your favorite toppings. Flavor and topping availability may change.",
-    imageKey: "froyoCup",
+    imageKeys: ["fruityPebblesFroyoCloseup", "saltedCaramelOreoFroyo"],
     items: [
-      { name: "Build Your Own FroYo", imageKey: "froyoCup" },
-      { name: "Classic FroYo Cup", imageKey: "froyoCup" },
-      { name: "Loaded FroYo Cup", imageKey: "froyoCup" },
-      { name: "Seasonal Flavors", imageKey: "froyoCup" },
+      { name: "Build Your Own FroYo" },
+      { name: "Classic FroYo Cup" },
+      { name: "Loaded FroYo Cup" },
+      { name: "Seasonal Flavors" },
     ],
   },
   {
@@ -36,27 +34,27 @@ export const menuCategories: MenuCategory[] = [
     name: "Specialty Creations",
     description:
       "Big flavors, creative combinations, and limited-time favorites inspired by the season.",
-    imageKey: "sundae",
+    imageKeys: ["hotFudgeSundae", "peachCobblerSundae"],
     items: [
-      { name: "Specialty Sundaes", imageKey: "sundae" },
-      { name: "Brownie à la Mode", imageKey: "sundae" },
-      { name: "Strawberry Cheesecake Bowl", imageKey: "sundae" },
-      { name: "Peach Cobbler Sundae", imageKey: "sundae" },
-      { name: "Seasonal Creations", imageKey: "sundae" },
+      { name: "Specialty Sundaes" },
+      { name: "Brownie à la Mode" },
+      { name: "Strawberry Cheesecake Bowl" },
+      { name: "Peach Cobbler Sundae" },
+      { name: "Seasonal Creations" },
     ],
   },
   {
-    id: "cool-refreshing",
-    name: "Cool & Refreshing",
+    id: "floats-refreshers",
+    name: "Floats & Refreshers",
     description:
       "Light, refreshing treats perfect for warm Sacramento days and outdoor events.",
-    imageKey: "doleWhip",
+    imageKeys: ["orangeFloat", "rootBeerFloat", "mangoChamoyCups"],
     items: [
-      { name: "Dole Whip", imageKey: "doleWhip" },
-      { name: "Smoothies", imageKey: "smoothie" },
-      { name: "Chamango", imageKey: "smoothie" },
-      { name: "Soda Floats", imageKey: "doleWhip" },
-      { name: "Seasonal Refreshers", imageKey: "smoothie" },
+      { name: "Dole Whip" },
+      { name: "Smoothies" },
+      { name: "Chamango" },
+      { name: "Soda Floats" },
+      { name: "Seasonal Refreshers" },
     ],
   },
   {
@@ -64,11 +62,11 @@ export const menuCategories: MenuCategory[] = [
     name: "Shakes & More",
     description:
       "Creamy shakes, fruit parfaits, and specialty creations worth chasing down the truck for.",
-    imageKey: "milkshake",
+    imageKeys: ["twoSpecialtyShakes", "fruityCerealShakeTruck"],
     items: [
-      { name: "Milkshakes", imageKey: "milkshake" },
-      { name: "Fruit Parfaits", imageKey: "parfait" },
-      { name: "Specialty Shakes", imageKey: "milkshake" },
+      { name: "Milkshakes" },
+      { name: "Fruit Parfaits" },
+      { name: "Specialty Shakes" },
     ],
   },
 ];
@@ -76,30 +74,34 @@ export const menuCategories: MenuCategory[] = [
 export const productPreview = [
   {
     title: "Build Your Own FroYo",
+    accent: "Custom creations",
     description:
       "Pick your flavors and pile on the toppings for a dessert that's uniquely yours.",
-    imageKey: "froyoCup" as const,
+    imageKey: "fruityPebblesFroyoCloseup" as ImageKey,
     href: "/menu#frozen-yogurt",
   },
   {
     title: "Specialty Sundaes",
+    accent: "Big flavor",
     description:
       "Creative combinations and seasonal favorites with big flavor in every spoonful.",
-    imageKey: "sundae" as const,
+    imageKey: "hotFudgeSundae" as ImageKey,
     href: "/menu#specialty-creations",
   },
   {
-    title: "Dole Whip & Refreshing Treats",
+    title: "Floats & Refreshing Treats",
+    accent: "Cool & classic",
     description:
-      "Light, tropical, and refreshing—the perfect treat on a warm Sacramento day.",
-    imageKey: "doleWhip" as const,
-    href: "/menu#cool-refreshing",
+      "Orange floats, root beer floats, and refreshing treats for warm Sacramento days.",
+    imageKey: "orangeFloat" as ImageKey,
+    href: "/menu#floats-refreshers",
   },
   {
     title: "Milkshakes & Smoothies",
+    accent: "Thick & creamy",
     description:
       "Thick, creamy shakes and fruit-forward smoothies for every kind of sweet tooth.",
-    imageKey: "milkshake" as const,
+    imageKey: "twoSpecialtyShakes" as ImageKey,
     href: "/menu#shakes-more",
   },
 ];

@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "verify:images": "node scripts/verify-images.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

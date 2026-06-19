@@ -1,170 +1,153 @@
-export type ImageManifestEntry = {
+export type SiteImageEntry = {
   src: string;
   alt: string;
-  label: string;
-  category: "brand" | "truck" | "products" | "events" | "team" | "gallery";
+  objectPosition?: string;
   priority?: boolean;
-  placeholderIcon?: "truck" | "cup" | "sundae" | "event" | "people" | "gallery";
 };
 
+/** Central manifest of every production image path. Prefer WebP. */
 export const imageManifest = {
-  logo: {
-    src: "/images/brand/logo.png",
-    alt: "I Scream Yogurt logo",
-    label: "Official Logo",
-    category: "brand",
-    placeholderIcon: "cup",
-  },
-  heroTruck: {
-    src: "/images/truck/hero-truck.jpg",
-    alt: "I Scream Yogurt mobile dessert truck",
-    label: "Hero Truck Photo",
-    category: "truck",
+  // Truck
+  truckSideProfile: {
+    src: "/images/truck/truck-side-profile.webp",
+    alt: "I Scream Yogurt mobile dessert truck side profile in Sacramento",
+    objectPosition: "center",
     priority: true,
-    placeholderIcon: "truck",
   },
-  truckSide: {
-    src: "/images/truck/truck-side.jpg",
-    alt: "Side view of the I Scream Yogurt truck",
-    label: "Truck Side Photo",
-    category: "truck",
-    placeholderIcon: "truck",
+  truckAngleCloseup: {
+    src: "/images/truck/truck-angle-closeup.webp",
+    alt: "Close-up angle of the I Scream Yogurt truck with colorful branding",
+    objectPosition: "center",
   },
-  truckAtEvent: {
-    src: "/images/truck/truck-at-event.jpg",
-    alt: "I Scream Yogurt truck serving at an event",
-    label: "Truck at Event",
-    category: "truck",
-    placeholderIcon: "truck",
+  purpleFroyoTruck: {
+    src: "/images/truck/purple-froyo-truck.webp",
+    alt: "I Scream Yogurt truck serving purple frozen yogurt",
+    objectPosition: "center",
   },
-  froyoCup: {
-    src: "/images/products/froyo-cup.jpg",
-    alt: "Frozen yogurt cup with colorful toppings",
-    label: "FroYo Cup",
-    category: "products",
-    placeholderIcon: "cup",
+  fruityCerealShakeTruck: {
+    src: "/images/truck/fruity-cereal-shake-truck.webp",
+    alt: "Fruity cereal milkshake held in front of the I Scream Yogurt truck",
+    objectPosition: "center bottom",
   },
-  doleWhip: {
-    src: "/images/products/dole-whip.jpg",
-    alt: "Refreshing Dole Whip treat",
-    label: "Dole Whip",
-    category: "products",
-    placeholderIcon: "cup",
+  berryCookieFroyoTruck: {
+    src: "/images/truck/berry-cookie-froyo-truck.webp",
+    alt: "Berry cookie frozen yogurt cup in front of the I Scream Yogurt truck",
+    objectPosition: "center",
   },
-  milkshake: {
-    src: "/images/products/milkshake.jpg",
-    alt: "Creamy milkshake from I Scream Yogurt",
-    label: "Milkshake",
-    category: "products",
-    placeholderIcon: "cup",
+  // Events
+  truckServingCustomers: {
+    src: "/images/events/truck-serving-customers.webp",
+    alt: "I Scream Yogurt truck serving customers at an event",
+    objectPosition: "center",
   },
-  sundae: {
-    src: "/images/products/sundae.jpg",
-    alt: "Specialty sundae with toppings",
-    label: "Specialty Sundae",
-    category: "products",
-    placeholderIcon: "sundae",
+  // Products
+  fruityPebblesFroyoCloseup: {
+    src: "/images/products/fruity-pebbles-froyo-closeup.webp",
+    alt: "Close-up of fruity pebbles frozen yogurt with colorful toppings",
+    objectPosition: "center",
   },
-  smoothie: {
-    src: "/images/products/smoothie.jpg",
-    alt: "Fruit smoothie",
-    label: "Smoothie",
-    category: "products",
-    placeholderIcon: "cup",
+  fruityPebblesFroyo: {
+    src: "/images/products/fruity-pebbles-froyo.webp",
+    alt: "Fruity pebbles frozen yogurt cup from I Scream Yogurt",
+    objectPosition: "center",
   },
-  parfait: {
-    src: "/images/products/parfait.jpg",
-    alt: "Layered fruit parfait",
-    label: "Fruit Parfait",
-    category: "products",
-    placeholderIcon: "cup",
+  hotFudgeSundae: {
+    src: "/images/products/hot-fudge-sundae.webp",
+    alt: "Hot fudge sundae with whipped topping from I Scream Yogurt",
+    objectPosition: "center top",
   },
-  birthdayEvent: {
-    src: "/images/events/birthday-event.jpg",
-    alt: "Birthday party catered by I Scream Yogurt",
-    label: "Birthday Event",
-    category: "events",
-    placeholderIcon: "event",
+  orangeFloat: {
+    src: "/images/products/orange-float.webp",
+    alt: "Orange cream float in a clear cup",
+    objectPosition: "center",
   },
-  schoolEvent: {
-    src: "/images/events/school-event.jpg",
-    alt: "School event with I Scream Yogurt truck",
-    label: "School Event",
-    category: "events",
-    placeholderIcon: "event",
+  rootBeerFloat: {
+    src: "/images/products/root-beer-float.webp",
+    alt: "Root beer float with creamy foam",
+    objectPosition: "center",
   },
-  companyEvent: {
-    src: "/images/events/company-event.jpg",
-    alt: "Company event catered by I Scream Yogurt",
-    label: "Company Event",
-    category: "events",
-    placeholderIcon: "event",
+  twoSpecialtyShakes: {
+    src: "/images/products/two-specialty-shakes.webp",
+    alt: "Two specialty milkshakes from I Scream Yogurt",
+    objectPosition: "center",
   },
-  communityEvent: {
-    src: "/images/events/community-event.jpg",
-    alt: "Community gathering with I Scream Yogurt",
-    label: "Community Event",
-    category: "events",
-    placeholderIcon: "event",
+  peachCobblerSundae: {
+    src: "/images/products/peach-cobbler-sundae.webp",
+    alt: "Peach cobbler sundae with toppings",
+    objectPosition: "center",
   },
-  ownerOrFamily: {
-    src: "/images/team/owner-or-family.jpg",
-    alt: "I Scream Yogurt owner or family",
-    label: "Owner or Family Photo",
-    category: "team",
-    placeholderIcon: "people",
+  peachCobblerTall: {
+    src: "/images/products/peach-cobbler-tall.webp",
+    alt: "Tall peach cobbler dessert cup",
+    objectPosition: "center top",
   },
-  gallery01: {
-    src: "/images/gallery/gallery-01.jpg",
-    alt: "I Scream Yogurt truck at a Sacramento event",
-    label: "Gallery: The Truck",
-    category: "gallery",
-    placeholderIcon: "truck",
+  saltedCaramelOreoFroyo: {
+    src: "/images/products/salted-caramel-oreo-froyo.webp",
+    alt: "Salted caramel Oreo frozen yogurt",
+    objectPosition: "center",
   },
-  gallery02: {
-    src: "/images/gallery/gallery-02.jpg",
-    alt: "Frozen yogurt cup with toppings",
-    label: "Gallery: FroYo Cup",
-    category: "gallery",
-    placeholderIcon: "cup",
+  mangoChamoyCups: {
+    src: "/images/products/mango-chamoy-cups.webp",
+    alt: "Mango chamoy frozen treat cups",
+    objectPosition: "center",
   },
-  gallery03: {
-    src: "/images/gallery/gallery-03.jpg",
-    alt: "Specialty sundae creation",
-    label: "Gallery: Sundae",
-    category: "gallery",
-    placeholderIcon: "sundae",
+  // Marketing
+  cateringOfferFlyer: {
+    src: "/images/marketing/catering-offer-flyer.webp",
+    alt: "I Scream Yogurt catering information flyer",
+    objectPosition: "center",
   },
-  gallery04: {
-    src: "/images/gallery/gallery-04.jpg",
-    alt: "Crowd enjoying I Scream Yogurt at an event",
-    label: "Gallery: Event Crowd",
-    category: "gallery",
-    placeholderIcon: "event",
-  },
-  gallery05: {
-    src: "/images/gallery/gallery-05.jpg",
-    alt: "Customer enjoying frozen yogurt",
-    label: "Gallery: Customer Experience",
-    category: "gallery",
-    placeholderIcon: "people",
-  },
-  gallery06: {
-    src: "/images/gallery/gallery-06.jpg",
-    alt: "Catering setup with I Scream Yogurt truck",
-    label: "Gallery: Catering Setup",
-    category: "gallery",
-    placeholderIcon: "truck",
-  },
-} as const satisfies Record<string, ImageManifestEntry>;
+} as const satisfies Record<string, SiteImageEntry>;
 
 export type ImageKey = keyof typeof imageManifest;
 
-export const galleryImages: ImageKey[] = [
-  "gallery01",
-  "gallery02",
-  "gallery03",
-  "gallery04",
-  "gallery05",
-  "gallery06",
+/** Gallery entries for homepage and marketing */
+export const galleryManifest: SiteImageEntry[] = [
+  {
+    src: "/images/gallery/berry-cookie-froyo-truck.webp",
+    alt: "Berry cookie frozen yogurt at the I Scream Yogurt truck",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/peach-cobbler-sundae.webp",
+    alt: "Peach cobbler sundae at I Scream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/mango-chamoy-cups.webp",
+    alt: "Mango chamoy cups from I Scream Yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/salted-caramel-oreo-froyo.webp",
+    alt: "Salted caramel Oreo frozen yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/fruity-pebbles-froyo.webp",
+    alt: "Fruity pebbles frozen yogurt",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/truck-serving-customers.webp",
+    alt: "I Scream Yogurt truck serving guests at an event",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/truck-side-profile.webp",
+    alt: "I Scream Yogurt truck side profile",
+    objectPosition: "center",
+  },
+  {
+    src: "/images/gallery/hot-fudge-sundae.webp",
+    alt: "Hot fudge sundae from I Scream Yogurt",
+    objectPosition: "center top",
+  },
 ];
+
+/** All production image paths for verification script */
+export function getAllProductionImagePaths(): string[] {
+  const manifestPaths = Object.values(imageManifest).map((e) => e.src);
+  const galleryPaths = galleryManifest.map((e) => e.src);
+  return [...new Set([...manifestPaths, ...galleryPaths])];
+}

@@ -6,10 +6,10 @@ describe("menu data", () => {
     expect(menuCategories).toHaveLength(4);
   });
 
-  it("includes Frozen Yogurt category", () => {
-    const froyo = menuCategories.find((c) => c.id === "frozen-yogurt");
-    expect(froyo).toBeDefined();
-    expect(froyo?.items.length).toBeGreaterThan(0);
+  it("includes Floats & Refreshers category", () => {
+    const floats = menuCategories.find((c) => c.id === "floats-refreshers");
+    expect(floats).toBeDefined();
+    expect(floats?.imageKeys.length).toBeGreaterThanOrEqual(2);
   });
 
   it("has product preview cards for homepage", () => {

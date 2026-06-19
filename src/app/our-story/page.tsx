@@ -2,7 +2,7 @@ import { business } from "@/data/business";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import { BrandImage } from "@/components/BrandImage";
+import { SiteImage } from "@/components/SiteImage";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
@@ -34,17 +34,28 @@ const storySections = [
 export default function OurStoryPage() {
   return (
     <>
-      <section className="bg-brand-navy py-14 text-white sm:py-18">
+      <section className="relative overflow-hidden bg-brand-navy py-12 text-white sm:py-16">
         <Container>
-          <SectionHeading
-            title="A Food Truck With a Bigger Dream"
-            titleAs="h1"
-            className="text-white"
-          />
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <SectionHeading
+              title="A Food Truck With a Bigger Dream"
+              titleAs="h1"
+              className="text-white"
+            />
+            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-lift">
+              <SiteImage
+                imageKey="truckSideProfile"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                rounded="3xl"
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <div className="space-y-6 text-lg leading-relaxed text-brand-navy/80">
@@ -65,27 +76,31 @@ export default function OurStoryPage() {
                 can help turn a mobile favorite into a permanent Sacramento destination.&rdquo;
               </blockquote>
             </div>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-card">
-              <BrandImage imageKey="ownerOrFamily" fill sizes="(max-width: 1024px) 100vw, 40vw" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card">
+              <SiteImage
+                imageKey="truckServingCustomers"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                rounded="3xl"
+              />
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-brand-cream py-16">
-        <Container className="space-y-12">
+      <section className="bg-brand-cream py-14 sm:py-16">
+        <Container className="space-y-10">
           {storySections.map((section) => (
-            <article key={section.title}>
-              <h2 className="text-2xl font-bold text-brand-navy">{section.title}</h2>
-              <p className="mt-3 max-w-3xl text-lg leading-relaxed text-brand-navy/75">
-                {section.content}
-              </p>
+            <article key={section.title} className="max-w-3xl">
+              <h2 className="text-2xl font-extrabold text-brand-navy">{section.title}</h2>
+              <p className="mt-3 text-lg leading-relaxed text-brand-navy/75">{section.content}</p>
             </article>
           ))}
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -98,7 +113,7 @@ export default function OurStoryPage() {
                 <InstagramCTA variant="compact" />
               </div>
             </div>
-            <div id="story-newsletter" className="rounded-2xl bg-white p-6 shadow-soft sm:p-8">
+            <div className="rounded-2xl bg-white p-6 shadow-card sm:p-8">
               <h3 className="text-xl font-bold text-brand-navy">Stay Connected</h3>
               <p className="mt-2 text-sm text-brand-navy/70">
                 Be part of the community helping I Scream Yogurt grow.

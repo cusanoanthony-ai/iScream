@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { ExternalLinkCard } from "@/components/ExternalLinkCard";
+import { SiteImage } from "@/components/SiteImage";
 
 export const metadata = createPageMetadata({
   title: "Contact",
@@ -16,39 +17,48 @@ export const metadata = createPageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-teal py-14 text-white sm:py-18">
+      <section className="hero-gradient py-12 sm:py-16">
         <Container>
-          <SectionHeading
-            title="Let's Make Something Sweet Happen"
-            titleAs="h1"
-            className="text-white"
-          />
+          <SectionHeading title="Let's Make Something Sweet Happen" titleAs="h1" />
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="space-y-6 lg:col-span-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card lg:aspect-[3/4]">
+                <SiteImage
+                  imageKey="berryCookieFroyoTruck"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                  rounded="3xl"
+                />
+              </div>
               <h2 className="text-xl font-bold text-brand-navy">Get in Touch</h2>
-              <div className="space-y-4">
-                <a href={business.phone.href} className="flex min-h-12 items-center gap-3 font-bold text-brand-navy hover:text-brand-teal">
-                  <Phone className="h-5 w-5 text-brand-teal" aria-hidden="true" />
+              <div className="space-y-3">
+                <a
+                  href={business.phone.href}
+                  className="flex min-h-12 items-center gap-3 rounded-xl bg-brand-pink/10 px-4 font-bold text-brand-navy hover:bg-brand-pink/15"
+                >
+                  <Phone className="h-5 w-5 text-brand-pink" aria-hidden="true" />
                   {business.phone.display}
                 </a>
-                <a href={business.email.href} className="flex min-h-12 items-center gap-3 text-brand-navy hover:text-brand-teal">
+                <a
+                  href={business.email.href}
+                  className="flex min-h-12 items-center gap-3 rounded-xl bg-white px-4 text-brand-navy shadow-soft hover:text-brand-teal"
+                >
                   <Mail className="h-5 w-5 text-brand-teal" aria-hidden="true" />
                   {business.email.display}
                 </a>
-                <p className="flex items-start gap-3 text-brand-navy/75">
+                <p className="flex items-start gap-3 px-1 text-brand-navy/75">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-teal" aria-hidden="true" />
                   {business.location.display}
                 </p>
               </div>
-
               <p className="text-sm text-brand-navy/70">{business.hours}</p>
-
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 <ExternalLinkCard
                   href={business.social.instagram.url}
                   title="Instagram"
@@ -73,14 +83,15 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="rounded-2xl bg-white p-6 shadow-soft sm:p-8">
+              <div className="rounded-2xl bg-white p-6 shadow-card sm:p-8">
                 <h2 className="text-xl font-bold text-brand-navy">Send a Message</h2>
                 <p className="mt-2 text-sm text-brand-navy/70">
                   For event bookings, please use our{" "}
                   <a href="/catering" className="font-bold text-brand-teal hover:text-brand-pink">
                     catering request form
                   </a>
-                  .
+                  . If online messaging is unavailable, call {business.phone.display} or message{" "}
+                  {business.social.instagram.handle} on Instagram.
                 </p>
                 <div className="mt-6">
                   <ContactForm />

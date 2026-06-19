@@ -1,47 +1,41 @@
-import type { ImageKey } from "./images";
+export const homepageCateringEvents = [
+  "Birthday Parties",
+  "School Events",
+  "Company Events",
+  "Community Gatherings",
+  "Family Celebrations",
+];
 
-export type EventType = {
-  title: string;
-  description: string;
-  imageKey: ImageKey;
-};
-
-export const eventTypes: EventType[] = [
+export const eventTypes = [
   {
     title: "Birthday Parties",
     description:
       "Make birthdays unforgettable with a mobile dessert experience guests of all ages will love.",
-    imageKey: "birthdayEvent",
   },
   {
     title: "School Events",
     description:
       "Reward students, celebrate milestones, or add something sweet to school gatherings.",
-    imageKey: "schoolEvent",
   },
   {
     title: "Company Events",
     description:
       "Treat your team to a fun, photo-friendly dessert break they'll actually remember.",
-    imageKey: "companyEvent",
   },
   {
     title: "Community Gatherings",
     description:
       "From neighborhood block parties to local festivals—we bring the sweet to the community.",
-    imageKey: "communityEvent",
   },
   {
     title: "Family Celebrations",
     description:
       "Graduations, reunions, and family milestones deserve a dessert truck worth screaming about.",
-    imageKey: "birthdayEvent",
   },
   {
     title: "Fundraisers and Special Events",
     description:
       "Add a memorable dessert experience to fundraisers and special community occasions.",
-    imageKey: "communityEvent",
   },
 ];
 

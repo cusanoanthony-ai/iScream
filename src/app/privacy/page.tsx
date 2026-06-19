@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 export default function PrivacyPage() {
   return (
     <>
-      <section className="bg-brand-cream py-14 sm:py-18">
+      <section className="hero-gradient py-12 sm:py-16">
         <Container>
           <SectionHeading title="Privacy Policy" titleAs="h1" />
           <p className="mt-4 text-brand-navy/70">Last updated: June 2026</p>

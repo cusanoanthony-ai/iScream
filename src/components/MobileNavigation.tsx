@@ -7,7 +7,7 @@ import { primaryNav } from "@/data/navigation";
 import { business } from "@/data/business";
 import { cn } from "@/lib/utils";
 import { LogoLink } from "./Logo";
-import { PrimaryButton, SecondaryButton } from "./PrimaryButton";
+import { PrimaryButton } from "./PrimaryButton";
 
 type MobileNavigationProps = {
   isOpen: boolean;
@@ -71,17 +71,16 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           ))}
         </ul>
         <div className="space-y-3 border-t border-brand-navy/10 px-5 py-6">
+          <a
+            href={business.phone.href}
+            onClick={onClose}
+            className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-pink font-bold text-white shadow-soft"
+          >
+            Call {business.phone.display}
+          </a>
           <PrimaryButton href="/catering" className="w-full" trackAs="book_truck_click" onClick={onClose}>
             Book the Truck
           </PrimaryButton>
-          <SecondaryButton
-            href={business.phone.href}
-            className="w-full"
-            trackAs="call_click"
-            onClick={onClose}
-          >
-            Call {business.phone.display}
-          </SecondaryButton>
         </div>
       </nav>
     </div>

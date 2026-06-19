@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { newsletterFormSchema } from "@/lib/validation";
 import { trackEvent } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 import { PrimaryButton } from "./PrimaryButton";
 import { FormStatus } from "./FormStatus";
 
-export function NewsletterForm() {
+export function NewsletterForm({ variant = "default" }: { variant?: "default" | "light" }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -57,6 +58,8 @@ export function NewsletterForm() {
     }
   }
 
+  const isLight = variant === "light";
+
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-3">
       <div>
@@ -72,7 +75,12 @@ export function NewsletterForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@example.com"
-          className="w-full rounded-full border-2 border-brand-navy/10 bg-white px-4 py-3 text-sm text-brand-navy placeholder:text-brand-navy/40 focus:border-brand-teal"
+          className={cn(
+            "w-full rounded-full border-2 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal",
+            isLight
+              ? "border-white/30 bg-white/10 text-white placeholder:text-white/60"
+              : "border-brand-navy/10 bg-white text-brand-navy placeholder:text-brand-navy/40 focus:border-brand-teal",
+          )}
           aria-invalid={fieldError ? "true" : undefined}
           aria-describedby={fieldError ? "newsletter-email-error" : undefined}
         />
@@ -90,7 +98,12 @@ export function NewsletterForm() {
         className="hidden"
         aria-hidden="true"
       />
-      <PrimaryButton type="submit" loading={loading} disabled={loading} className="w-full">
+      <PrimaryButton
+        type="submit"
+        loading={loading}
+        disabled={loading}
+        className={cn("w-full", isLight && "!bg-brand-navy hover:!bg-brand-navy/90")}
+      >
         Join the List
       </PrimaryButton>
       <FormStatus type={status} message={message} />

@@ -10,6 +10,7 @@
 
   --font-display: var(--font-fredoka), system-ui, sans-serif;
   --font-body: var(--font-nunito), system-ui, sans-serif;
+  --font-wordmark-script: var(--font-pacifico), "Segoe Script", cursive;
 
   --shadow-soft: 0 4px 24px rgba(18, 48, 71, 0.08);
   --shadow-card: 0 8px 32px rgba(18, 48, 71, 0.12);

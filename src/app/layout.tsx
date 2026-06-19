@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fredoka, Nunito_Sans } from "next/font/google";
+import { Fredoka, Nunito_Sans, Pacifico } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -11,6 +11,14 @@ import "./globals.css";
 const fredoka = Fredoka({
   subsets: ["latin"],
   variable: "--font-fredoka",
+  display: "swap",
+  weight: ["600", "700"],
+});
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pacifico",
   display: "swap",
 });
 
@@ -28,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${nunito.variable}`}>
+    <html lang="en" className={`${fredoka.variable} ${nunito.variable} ${pacifico.variable}`}>
       <body className="min-h-screen flex flex-col">
         <JsonLd />
         <SiteHeader />

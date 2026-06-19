@@ -4,13 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { business } from "@/data/business";
+import {
+  BRAND_LOGO_PATHS,
+  BRAND_LOGO_DEFAULT,
+  formatFromBrandLogoPath,
+  type BrandLogoFormat,
+} from "@/lib/brand-logo";
 import { cn } from "@/lib/utils";
 import { BrandLogoLockup } from "./brand/BrandLogoLockup";
 
-const BRAND_LOGO_JPG = "/images/brand/brand-logo.jpg";
-const LOGO_PNG = "/images/brand/logo.png";
-
-type LogoSource = "jpg" | "png" | "lockup";
+type LogoSource = BrandLogoFormat | "lockup";
 
 type LogoProps = {
   className?: string;
@@ -45,24 +48,35 @@ function resolveImageDimensions(size: LogoProps["size"]) {
   return { width: 180, height: 72 };
 }
 
+function resolveLogoSrc(source: LogoSource): string {
+  if (source === "lockup") return BRAND_LOGO_DEFAULT;
+  return BRAND_LOGO_PATHS.find((path) => path.endsWith(`.${source}`)) ?? BRAND_LOGO_DEFAULT;
+}
+
 async function detectLogoSource(): Promise<LogoSource> {
-  for (const [src, source] of [
-    [BRAND_LOGO_JPG, "jpg"],
-    [LOGO_PNG, "png"],
-  ] as const) {
+  for (const path of BRAND_LOGO_PATHS) {
+    const format = formatFromBrandLogoPath(path);
+    if (!format) continue;
+
     const available = await new Promise<boolean>((resolve) => {
       const img = new window.Image();
       img.onload = () => resolve(true);
       img.onerror = () => resolve(false);
-      img.src = src;
+      img.src = path;
     });
-    if (available) return source;
+
+    if (available) return format;
   }
+
   return "lockup";
 }
 
+function defaultLogoSource(): LogoSource {
+  return formatFromBrandLogoPath(BRAND_LOGO_DEFAULT) ?? "jpg";
+}
+
 export function Logo({ className, variant = "default", size = "default" }: LogoProps) {
-  const [logoSource, setLogoSource] = useState<LogoSource>("jpg");
+  const [logoSource, setLogoSource] = useState<LogoSource>(defaultLogoSource);
 
   useEffect(() => {
     void detectLogoSource().then(setLogoSource);
@@ -79,7 +93,7 @@ export function Logo({ className, variant = "default", size = "default" }: LogoP
     );
   }
 
-  const src = logoSource === "jpg" ? BRAND_LOGO_JPG : LOGO_PNG;
+  const src = resolveLogoSrc(logoSource);
   const { width, height } = resolveImageDimensions(size);
 
   const logoImage = (

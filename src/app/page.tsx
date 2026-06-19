@@ -113,7 +113,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Catering — truck-led visual, distinct from product hero */}
+      {/* Catering — product-led branded visual, no truck photo */}
       <section className="relative overflow-hidden bg-brand-teal py-12 text-white sm:py-16 lg:py-20">
         <SprinklePattern variant="dark" className="opacity-15" aria-hidden="true" />
         <Container className="relative">

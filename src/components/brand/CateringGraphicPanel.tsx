@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { homepageCateringEvents } from "@/data/events";
 import { SiteImage } from "@/components/SiteImage";
-import { SprinklePattern } from "@/components/SprinklePattern";
+import { Logo } from "@/components/Logo";
 
 const cateringIcons = {
   party: PartyPopper,
@@ -17,39 +17,41 @@ const cateringIcons = {
   heart: Heart,
 };
 
-/** Catering visual — truck-led to contrast product hero; event chips, no duplicate product */
+/** Catering visual — official logo + one strong product image; no truck photo */
 export function CateringGraphicPanel() {
   return (
     <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-lift backdrop-blur-sm">
-        <SprinklePattern variant="dark" className="opacity-10" aria-hidden="true" />
-
-        <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="overflow-hidden rounded-3xl border border-white/20 bg-white shadow-lift">
+        <div className="relative aspect-[5/4] overflow-hidden">
           <SiteImage
-            imageKey="truckSideProfile"
+            imageKey="hotFudgeSundae"
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
             rounded="none"
-            objectPosition="center 78%"
+            objectPosition="center top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white via-white/80 to-transparent" />
         </div>
 
-        <div className="relative space-y-4 p-5 sm:p-6">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-coral">
-            We bring the truck to you
-          </p>
+        <div className="space-y-4 px-5 pb-5 pt-2 sm:px-6 sm:pb-6">
+          <div className="flex flex-col items-center rounded-2xl bg-brand-cream/80 px-4 py-4 text-center">
+            <Logo size="md" />
+            <p className="mt-3 text-sm font-bold uppercase tracking-wide text-brand-coral">
+              Real treats for your event
+            </p>
+          </div>
+
           <ul className="grid grid-cols-2 gap-2">
             {homepageCateringEvents.map((event) => {
               const Icon = cateringIcons[event.icon];
               return (
                 <li
                   key={event.label}
-                  className="flex items-center gap-2 rounded-lg bg-white/12 px-2.5 py-2 backdrop-blur-sm"
+                  className="flex items-center gap-2 rounded-lg bg-brand-teal/10 px-2.5 py-2"
                 >
                   <Icon className="h-4 w-4 shrink-0 text-brand-coral" aria-hidden="true" />
-                  <span className="text-xs font-bold leading-tight text-white">{event.label}</span>
+                  <span className="text-xs font-bold leading-tight text-brand-navy">{event.label}</span>
                 </li>
               );
             })}

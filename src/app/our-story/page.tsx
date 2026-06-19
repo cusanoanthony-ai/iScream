@@ -5,9 +5,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { SprinklePattern } from "@/components/SprinklePattern";
-import { Logo } from "@/components/Logo";
-import { StoryJourneyGraphic } from "@/components/brand/StoryJourneyGraphic";
+import { SecondaryButton } from "@/components/PrimaryButton";
 import { LogoFeatureCard } from "@/components/brand/LogoFeatureCard";
+import { OurStoryHeroVisual } from "@/components/brand/OurStoryHeroVisual";
 import { Studio40Feature } from "@/components/brand/Studio40Feature";
 import { cn } from "@/lib/utils";
 
@@ -42,32 +42,32 @@ const storySections = [
 export default function OurStoryPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy py-12 text-white sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-brand-navy py-10 text-white sm:py-14 lg:py-16">
         <SprinklePattern variant="dark" className="opacity-10" aria-hidden="true" />
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className="space-y-5">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="order-2 space-y-5 lg:order-1">
               <p className="text-sm font-bold uppercase tracking-widest text-brand-coral">
                 Our Story
               </p>
               <SectionHeading
                 title="A Food Truck With a Bigger Dream"
                 titleAs="h1"
-                description="From mobile frozen yogurt to a future Sacramento destination — built one event, one community, and one unforgettable cup at a time."
+                description="From a mobile dessert experience to a future frozen yogurt destination."
                 className="text-white [&_p]:text-white/85"
               />
+              <div>
+                <SecondaryButton
+                  href="#join-journey"
+                  className="!border-white !bg-white !text-brand-navy hover:!bg-brand-cream"
+                >
+                  Follow the Journey
+                </SecondaryButton>
+              </div>
             </div>
 
-            <div className="space-y-5">
-              <div className="rounded-3xl border border-white/15 bg-white p-6 shadow-lift sm:p-8">
-                <div className="flex flex-col items-center text-center">
-                  <Logo size="xl" />
-                  <p className="mt-5 max-w-sm text-base font-semibold leading-relaxed text-brand-navy/80">
-                    {business.tagline}
-                  </p>
-                </div>
-              </div>
-              <StoryJourneyGraphic showLogo={false} />
+            <div className="order-1 lg:order-2">
+              <OurStoryHeroVisual />
             </div>
           </div>
         </Container>
@@ -133,7 +133,7 @@ export default function OurStoryPage() {
 
       <Studio40Feature />
 
-      <section className="py-14 sm:py-20">
+      <section id="join-journey" className="scroll-mt-24 py-14 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2">
             <div>

@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { SprinklePattern } from "@/components/SprinklePattern";
 import { cn } from "@/lib/utils";
 
-const STUDIO40_URL = "https://fox40.com/studio-40/";
+const STUDIO40_FEATURE_URL = "https://fox40.com/studio-40/i-scream-yogurt-2/";
 
 type Studio40FeatureProps = {
   className?: string;
@@ -35,17 +35,16 @@ export function Studio40Feature({ className }: Studio40FeatureProps) {
                 Featured on FOX40 Studio 40
               </h2>
               <p className="max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
-                iScream Yogurt has been highlighted on FOX40&apos;s Studio 40 segment, sharing the
-                mobile frozen yogurt experience with Sacramento viewers and building local buzz
-                around the truck.
+                iScream Yogurt had the opportunity to share the truck, the treats, and the story
+                behind the brand with Sacramento viewers on FOX40&apos;s Studio 40.
               </p>
               <a
-                href={STUDIO40_URL}
+                href={STUDIO40_FEATURE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-brand-teal transition-colors hover:bg-brand-cream"
               >
-                Visit FOX40 Studio 40
+                Watch the FOX40 Feature
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 <span className="sr-only">(opens in new tab)</span>
               </a>

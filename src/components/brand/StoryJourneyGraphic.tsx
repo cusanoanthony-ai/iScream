@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 type StoryJourneyGraphicProps = {
   className?: string;
+  showLogo?: boolean;
 };
 
 const steps = [
@@ -14,7 +15,7 @@ const steps = [
 ];
 
 /** Playful truck → community → storefront journey graphic for Our Story */
-export function StoryJourneyGraphic({ className }: StoryJourneyGraphicProps) {
+export function StoryJourneyGraphic({ className, showLogo = true }: StoryJourneyGraphicProps) {
   return (
     <div
       className={cn(
@@ -24,8 +25,13 @@ export function StoryJourneyGraphic({ className }: StoryJourneyGraphicProps) {
     >
       <SprinklePattern variant="dark" className="opacity-15" aria-hidden="true" />
       <div className="relative">
-        <Logo variant="light" size="md" />
-        <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/90 sm:text-base">
+        {showLogo && <Logo variant="light" size="md" />}
+        <p
+          className={cn(
+            "max-w-sm text-sm leading-relaxed text-white/90 sm:text-base",
+            showLogo ? "mt-4" : "mt-0",
+          )}
+        >
           From a mobile dessert experience to a future frozen yogurt destination.
         </p>
 

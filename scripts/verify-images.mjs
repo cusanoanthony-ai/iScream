@@ -9,6 +9,7 @@ const publicDir = path.join(root, "public");
 
 /** Paths referenced in src/data/images.ts — keep in sync */
 const productionPaths = [
+  "/images/brand/brand-logo.jpg",
   "/images/truck/truck-side-profile.webp",
   "/images/truck/truck-angle-closeup.webp",
   "/images/truck/purple-froyo-truck.webp",

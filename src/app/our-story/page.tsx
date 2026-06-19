@@ -42,11 +42,11 @@ const storySections = [
 export default function OurStoryPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy py-10 text-white sm:py-14 lg:py-16">
+      <section className="relative overflow-hidden bg-brand-navy py-12 text-white sm:py-16 lg:py-20">
         <SprinklePattern variant="dark" className="opacity-10" aria-hidden="true" />
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="order-2 space-y-5 lg:order-1">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="order-2 space-y-6 lg:order-1 lg:py-2">
               <p className="text-sm font-bold uppercase tracking-widest text-brand-coral">
                 Our Story
               </p>
@@ -54,9 +54,9 @@ export default function OurStoryPage() {
                 title="A Food Truck With a Bigger Dream"
                 titleAs="h1"
                 description="From a mobile dessert experience to a future frozen yogurt destination."
-                className="text-white [&_p]:text-white/85"
+                className="max-w-xl text-white [&_h1]:text-3xl [&_h1]:sm:text-4xl [&_h1]:lg:text-5xl [&_p]:text-base [&_p]:sm:text-lg [&_p]:text-white/85"
               />
-              <div>
+              <div className="pt-1">
                 <SecondaryButton
                   href="#join-journey"
                   className="!border-white !bg-white !text-brand-navy hover:!bg-brand-cream"
